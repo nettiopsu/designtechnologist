@@ -1,21 +1,52 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { graphql } from "gatsby";
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+interface Props {
+  data: {
+    allMarkdownRemark: {
+      edges: any[];
+    };
+  };
+}
+
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: { edges }
+  }
+}: Props) => {
+  const Posts = edges.map(edge => (
+    <div key={edge.node.id}>
+      <a href={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</a>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  ));
 
-export default IndexPage
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <h1>Chapters</h1>
+      {Posts}
+    </Layout>
+  );
+};
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { order: DESC }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default IndexPage;
