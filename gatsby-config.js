@@ -33,13 +33,23 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown`,
-        path: `${__dirname}/src/markdown`
+        path: `${__dirname}/src/pages/book`
       }
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [`gatsby-remark-autolink-headers`]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`
+          }
+        ]
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

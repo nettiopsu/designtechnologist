@@ -25,7 +25,6 @@ function SEO({ description, lang, meta, title }: Props) {
           siteMetadata {
             title
             description
-            author
           }
         }
       }

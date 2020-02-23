@@ -6,7 +6,7 @@ import { graphql } from "gatsby";
 
 interface Props {
   data: {
-    allMarkdownRemark: {
+    allMdx: {
       edges: any[];
     };
   };
@@ -14,33 +14,24 @@ interface Props {
 
 const IndexPage = ({
   data: {
-    allMarkdownRemark: { edges }
+    allMdx: { edges }
   }
 }: Props) => {
-  const Posts = edges.map(edge => (
-    <div key={edge.node.id}>
-      <a href={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</a>
-    </div>
-  ));
-
   return (
     <Layout>
       <SEO title="Home" />
       <h1>Chapters</h1>
-      {Posts}
+      <a href="/book/license">License</a>
     </Layout>
   );
 };
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC }) {
+    allMdx {
       edges {
         node {
-          id
-          excerpt(pruneLength: 250)
           frontmatter {
-            path
             title
           }
         }
