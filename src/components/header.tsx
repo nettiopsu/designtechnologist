@@ -20,17 +20,31 @@ const Header = ({ siteTitle = "" }: Props) => (
         height: `64px`
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+      <Link
+        to="/"
+        style={{
+          color: `white`,
+          textDecoration: `none`
+        }}
+      >
+        <img src={Logo} style={{ display: "inline-block" }} />
+        <div
           style={{
-            color: `white`,
-            textDecoration: `none`
+            fontFamily: "Fira Sans",
+            display: "inline-flex",
+            height: 64,
+            backgroundColor: "#fff",
+            paddingLeft: 16,
+            paddingRight: 16,
+            verticalAlign: "top",
+            color: "#453E3E",
+            alignItems: "center",
+            justifyContent: "center"
           }}
         >
-          <img src={Logo} style={{ display: "inline-block" }} />
-        </Link>
-      </h1>
+          {siteTitle}
+        </div>
+      </Link>
     </div>
   </header>
 );
