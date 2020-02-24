@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
-import PropTypes from "prop-types";
 import React from "react";
+import Logo from "../images/logo.svg";
 
 interface Props {
   siteTitle: string;
@@ -9,7 +9,7 @@ interface Props {
 const Header = ({ siteTitle = "" }: Props) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#0899BC`,
       marginBottom: `1.45rem`
     }}
   >
@@ -17,7 +17,7 @@ const Header = ({ siteTitle = "" }: Props) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`
+        height: `64px`
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -28,7 +28,7 @@ const Header = ({ siteTitle = "" }: Props) => (
             textDecoration: `none`
           }}
         >
-          {siteTitle}
+          <img src={Logo} style={{ display: "inline-block" }} />
         </Link>
       </h1>
     </div>
