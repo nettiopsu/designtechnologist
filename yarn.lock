@@ -5585,11 +5585,6 @@ gatsby-page-utils@^0.0.37:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-google-fonts@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
-  integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
-
 gatsby-plugin-manifest@^2.2.39:
   version "2.2.39"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.39.tgz#6690db911dc5c20ef34a2d89c4db845def9c3d15"
@@ -12626,6 +12621,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typeface-fira-sans@^0.0.75:
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/typeface-fira-sans/-/typeface-fira-sans-0.0.75.tgz#6caaa7c7298f34838476af3c37dc57d2f1621132"
+  integrity sha512-PeaE4JCzBxbrp3oJzLjz+EVMjMIvrqnpmC7cp+HKYgPFbd9j4TAjGWRCEeaY/j9PRbTMICbrTuvanQFCmcjrYQ==
 
 ua-parser-js@^0.7.18:
   version "0.7.21"
