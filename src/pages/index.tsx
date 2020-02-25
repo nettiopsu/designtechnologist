@@ -20,7 +20,7 @@ const IndexPage = ({
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Chapters</h1>
+      <h1>Design technologist handbook</h1>
       <a href="/book/license">License</a>
     </Layout>
   );
