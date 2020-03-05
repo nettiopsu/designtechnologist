@@ -55,6 +55,12 @@ module.exports = {
           `gatsby-remark-copy-linked-files`
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`
+      }
     }
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
