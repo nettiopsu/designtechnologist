@@ -19,9 +19,14 @@ const IndexPage = ({
 }: Props) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Club" />
       <h1>Design technologist handbook</h1>
-      <a href="/book/license">License</a>
+      <h3>Chapters</h3>
+      <ul>
+        <li>
+          <a href="/book/license">License</a>
+        </li>
+      </ul>
     </Layout>
   );
 };
