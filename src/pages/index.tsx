@@ -26,6 +26,9 @@ const IndexPage = ({
       <h3>Chapters</h3>
       <ul>
         <li>
+          <a href="/book/searching-for-yourself">Searching for yourself</a>
+        </li>
+        <li>
           <a href="/book/license">License</a>
         </li>
       </ul>
