@@ -53,7 +53,10 @@ module.exports = {
             resolve: `gatsby-remark-images`
           },
           `gatsby-remark-copy-linked-files`
-        ]
+        ],
+        defaultLayouts: {
+          default: require.resolve("./src/components/layout.tsx")
+        }
       }
     },
     {
