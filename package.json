@@ -23,8 +23,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "typeface-fira-sans": "^0.0.75"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "@types/node": "^13.7.4",
