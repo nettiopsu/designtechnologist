@@ -48,7 +48,11 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-autolink-headers`
-          }
+          },
+          {
+            resolve: `gatsby-remark-images`
+          },
+          `gatsby-remark-copy-linked-files`
         ]
       }
     }
