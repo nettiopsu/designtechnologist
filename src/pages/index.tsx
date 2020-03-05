@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
+import mainPic from "../images/designtechnologist.svg";
 
 interface Props {
   data: {
@@ -21,6 +22,7 @@ const IndexPage = ({
     <Layout>
       <SEO title="Club" />
       <h1>Design technologist handbook</h1>
+      <img src={mainPic}></img>
       <h3>Chapters</h3>
       <ul>
         <li>
