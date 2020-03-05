@@ -29,6 +29,11 @@ const IndexPage = ({
           <a href="/book/searching-for-yourself">Searching for yourself</a>
         </li>
         <li>
+          <a href="/book/generalists-specialists-hybrid-t-shaped-people">
+            Generalists, specialists, hybrid and T-shaped people
+          </a>
+        </li>
+        <li>
           <a href="/book/license">License</a>
         </li>
       </ul>
