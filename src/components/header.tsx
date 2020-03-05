@@ -9,8 +9,7 @@ interface Props {
 const Header = ({ siteTitle = "" }: Props) => (
   <header
     style={{
-      background: `#0899BC`,
-      marginBottom: `1.45rem`
+      background: `#0899BC`
     }}
   >
     <div
@@ -28,22 +27,6 @@ const Header = ({ siteTitle = "" }: Props) => (
         }}
       >
         <img src={Logo} style={{ display: "inline-block" }} />
-        <div
-          style={{
-            fontFamily: "Fira Sans",
-            display: "inline-flex",
-            height: 64,
-            backgroundColor: "#fff",
-            paddingLeft: 16,
-            paddingRight: 16,
-            verticalAlign: "top",
-            color: "#453E3E",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          {siteTitle}
-        </div>
       </Link>
     </div>
   </header>
