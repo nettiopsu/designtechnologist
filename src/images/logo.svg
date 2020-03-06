@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="275" height="64" viewBox="0 0 275 64"><g transform="translate(-62 -172)"><path d="M0,0H275V64H0Z" transform="translate(62 172)" fill="#0899bc"/><g transform="translate(62 172)"><g transform="translate(21.748 23.789)"><path d="M80.982,77.18a2.168,2.168,0,0,0-1.142-.418A1.7,1.7,0,0,1,78.79,76.3a1.287,1.287,0,0,1,0-2.033L80.2,73.015a4.52,4.52,0,0,0,0-6.926A8.925,8.925,0,0,0,74.264,64a11.223,11.223,0,0,0-7.372,2.79,8.134,8.134,0,0,0,0,12.465,10.869,10.869,0,0,0,7.1,2.572h.079a10.448,10.448,0,0,0,6.908-2.433A1.568,1.568,0,0,0,80.982,77.18Z" transform="translate(-63.985 -64)" fill="none" stroke="#030303" stroke-miterlimit="10" stroke-width="1"/><circle cx="1.486" cy="1.486" r="1.486" transform="translate(2.229 5.199)"/><circle cx="1.486" cy="1.486" r="1.486" transform="translate(2.6 9.981)"/><circle cx="1.486" cy="1.486" r="1.486" transform="translate(5.943 2.228)"/><circle cx="2.228" cy="2.228" r="2.228" transform="translate(6.686 11.838)"/><circle cx="1.486" cy="1.486" r="1.486" transform="translate(10.771 2.228)"/></g><path d="M41.551,160.713,32,152.357,41.551,144" transform="translate(-23.902 -119.705)" fill="none" stroke="#030303" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><path d="M352,160.713l9.551-8.357L352,144" transform="translate(-307.769 -119.705)" fill="none" stroke="#030303" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g><text transform="translate(149.5 211)" font-size="18" font-family="FiraSans-Regular, Fira Sans"><tspan x="0" y="0">Design Technologist</tspan></text><line y2="36" transform="translate(128.5 187.5)" fill="none" stroke="#030303" stroke-width="1"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="275" height="64" viewBox="0 0 275 64">
+  <g id="Group_2" data-name="Group 2" transform="translate(-62 -172)">
+    <path id="Path_4" data-name="Path 4" d="M0,0H275V64H0Z" transform="translate(62 172)" fill="#0899bc"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(71.902 164)">
+      <g id="color-palette-outline" transform="translate(21.748 23.789)">
+        <path id="Path_1" data-name="Path 1" d="M80.982,77.18a2.168,2.168,0,0,0-1.142-.418A1.7,1.7,0,0,1,78.79,76.3a1.287,1.287,0,0,1,0-2.033L80.2,73.015a4.52,4.52,0,0,0,0-6.926A8.925,8.925,0,0,0,74.264,64a11.223,11.223,0,0,0-7.372,2.79,8.134,8.134,0,0,0,0,12.465,10.869,10.869,0,0,0,7.1,2.572h.079a10.448,10.448,0,0,0,6.908-2.433A1.568,1.568,0,0,0,80.982,77.18Z" transform="translate(-63.985 -64)" fill="none" stroke="#030303" stroke-miterlimit="10" stroke-width="1"/>
+        <circle id="Ellipse_1" data-name="Ellipse 1" cx="1.486" cy="1.486" r="1.486" transform="translate(2.229 5.199)"/>
+        <circle id="Ellipse_2" data-name="Ellipse 2" cx="1.486" cy="1.486" r="1.486" transform="translate(2.6 9.981)"/>
+        <circle id="Ellipse_3" data-name="Ellipse 3" cx="1.486" cy="1.486" r="1.486" transform="translate(5.943 2.228)"/>
+        <circle id="Ellipse_4" data-name="Ellipse 4" cx="2.228" cy="2.228" r="2.228" transform="translate(6.686 11.838)"/>
+        <circle id="Ellipse_5" data-name="Ellipse 5" cx="1.486" cy="1.486" r="1.486" transform="translate(10.771 2.228)"/>
+      </g>
+      <path id="Path_2" data-name="Path 2" d="M41.551,160.713,32,152.357,41.551,144" transform="translate(-23.902 -119.705)" fill="none" stroke="#030303" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_3" data-name="Path 3" d="M352,160.713l9.551-8.357L352,144" transform="translate(-307.769 -119.705)" fill="none" stroke="#030303" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <text id="CLUB" transform="translate(15.5 57)" font-size="14" font-family="FiraSans-Regular, Fira Sans"><tspan x="0" y="0">CLUB</tspan></text>
+    </g>
+    <text id="Design_Technologist" data-name="Design Technologist" transform="translate(156 211)" font-size="18" font-family="FiraSans-Regular, Fira Sans"><tspan x="0" y="0">Design Technologist</tspan></text>
+    <line id="Line_1" data-name="Line 1" y2="38" transform="translate(142 185.5)" fill="none" stroke="#030303" stroke-width="1"/>
+  </g>
+</svg>
