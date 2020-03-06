@@ -1,0 +1,36 @@
+.root {
+  background: #0899bc;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  flex: 2;
+}
+
+.right {
+  flex: 1;
+  text-align: right;
+}
+
+.logo {
+  display: block;
+}
+
+.icon {
+  height: 32px;
+  width: 32px;
+  margin-right: 16px;
+  display: block;
+}
+
+.iconLink {
+  vertical-align: middle;
+  display: inline-block;
+}
