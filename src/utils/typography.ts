@@ -21,7 +21,7 @@ const typography = new Typography({
       marginBottom: "80px"
     },
     img: {
-      marginBottom: "80px !important"
+      marginBottom: 0
     }
   })
 });

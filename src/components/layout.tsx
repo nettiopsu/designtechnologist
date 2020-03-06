@@ -28,7 +28,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <div className={LayoutStyles.container}>
         <main className={LayoutStyles.content}>{children}</main>
         <footer></footer>
