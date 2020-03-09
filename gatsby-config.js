@@ -32,8 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown`,
-        path: `${__dirname}/src/pages/book`
+        name: `book`,
+        path: `${__dirname}/src/book`
       }
     },
     {
@@ -53,10 +53,7 @@ module.exports = {
             resolve: `gatsby-remark-images`
           },
           `gatsby-remark-copy-linked-files`
-        ],
-        defaultLayouts: {
-          default: require.resolve("./src/components/layout.tsx")
-        }
+        ]
       }
     },
     {
