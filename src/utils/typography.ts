@@ -11,7 +11,7 @@ const typography = new Typography({
       styles: ["400", "700"]
     },
     {
-      name: "Fira Sans",
+      name: "Roboto",
       styles: ["400", "700"]
     }
   ],

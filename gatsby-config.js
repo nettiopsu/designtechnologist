@@ -56,6 +56,7 @@ module.exports = {
         ]
       }
     },
+    "gatsby-remark-reading-time",
     {
       resolve: `gatsby-plugin-typography`,
       options: {

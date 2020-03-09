@@ -1,0 +1,9 @@
+.reading {
+  font-size: 16px;
+  margin-bottom: 32px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "./layout";
+import LayoutChapterStyles from "./layoutChapter.module.css";
 
 interface PageTemplateProps {
   data: {
@@ -19,6 +20,9 @@ export default function PageTemplate(props: PageTemplateProps) {
 
   return (
     <Layout>
+      <div className={LayoutChapterStyles.reading}>
+        Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
+      </div>
       <h1>{mdx.frontmatter.title}</h1>
       <img src={mdx.frontmatter.image.publicURL} alt="" />
 
@@ -35,6 +39,11 @@ export const pageQuery = graphql`
         title
         image {
           publicURL
+        }
+      }
+      fields {
+        readingTime {
+          minutes
         }
       }
     }
