@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "./layout";
 import LayoutChapterStyles from "./layoutChapter.module.css";
+import SEO from "./seo";
 
 interface PageTemplateProps {
   data: {
@@ -22,6 +23,7 @@ export default function PageTemplate(props: PageTemplateProps) {
     <Layout>
       <div className={LayoutChapterStyles.reading}>
         Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
+        <SEO title={mdx.frontmatter.title} />
       </div>
       <h1>{mdx.frontmatter.title}</h1>
       <img src={mdx.frontmatter.image.publicURL} alt="" />
