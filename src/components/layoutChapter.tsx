@@ -21,12 +21,13 @@ export default function PageTemplate(props: PageTemplateProps) {
 
   return (
     <Layout>
-      <div className={LayoutChapterStyles.reading}>
-        Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
-        <SEO title={mdx.frontmatter.title} />
-      </div>
+      <SEO title={mdx.frontmatter.title} />
       <h1>{mdx.frontmatter.title}</h1>
       <img src={mdx.frontmatter.image.publicURL} alt="" />
+
+      <div className={LayoutChapterStyles.readMore}>
+        Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
+      </div>
 
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
