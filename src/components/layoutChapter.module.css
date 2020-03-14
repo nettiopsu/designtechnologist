@@ -1,11 +1,12 @@
-.reading {
+.upperContainer {
   font-size: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
   font-family: Roboto, sans-serif;
   font-weight: bold;
   text-align: right;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 .readMore {
   font-size: 16px;
   font-family: Roboto, sans-serif;

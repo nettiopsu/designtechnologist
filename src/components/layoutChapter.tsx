@@ -22,6 +22,13 @@ export default function PageTemplate(props: PageTemplateProps) {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
+
+      <div className={LayoutChapterStyles.upperContainer}>
+        <div className={LayoutChapterStyles.rightCol}>
+          <a href="/">Back</a>
+        </div>
+      </div>
+
       <h1>{mdx.frontmatter.title}</h1>
       <img src={mdx.frontmatter.image.publicURL} alt="" />
 
