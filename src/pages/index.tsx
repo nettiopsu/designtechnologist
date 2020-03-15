@@ -39,6 +39,9 @@ const IndexPage = ({
           </a>
         </li>
         <li>
+          <a href="/book/challenges">Challenges</a>
+        </li>
+        <li>
           <a href="/book/license">License</a>
         </li>
       </ul>
