@@ -3,6 +3,7 @@ import React from "react";
 import Logo from "../images/logo.svg";
 import GithubLogo from "../icons/logo-github.svg";
 import SlackLogo from "../icons/logo-slack.svg";
+import MailIcon from "../icons/mail.svg";
 import HeaderStyles from "./header.module.css";
 
 const Header = () => (
@@ -33,6 +34,13 @@ const Header = () => (
           <img
             src={SlackLogo}
             alt="Slack channel"
+            className={HeaderStyles.icon}
+          />
+        </a>
+        <a href="/contact" className={HeaderStyles.iconLink}>
+          <img
+            src={MailIcon}
+            alt="Send us an e-mail"
             className={HeaderStyles.icon}
           />
         </a>
