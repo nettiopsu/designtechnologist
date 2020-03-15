@@ -34,6 +34,11 @@ const IndexPage = ({
           </a>
         </li>
         <li>
+          <a href="/book/who-is-a-design-technologist">
+            Who is a design technologist?
+          </a>
+        </li>
+        <li>
           <a href="/book/license">License</a>
         </li>
       </ul>
