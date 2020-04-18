@@ -11,11 +11,13 @@ const ContactPage = () => {
       <SEO title="Club" />
       <h1>Contact us</h1>
       <form
-        action="/contact-thanks"
         name="contact"
-        data-netlify-recaptcha="true"
+        method="post"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="bot-field" />{" "}
+        <input type="hidden" name="form-name" value="contact" />
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
             E-mail
