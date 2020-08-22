@@ -34,6 +34,8 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "tailwindcss": "^1.2.0",
+    "typeface-libre-baskerville": "^0.0.72",
+    "typeface-roboto": "^0.0.75",
     "typography": "^0.16.19"
   },
   "devDependencies": {

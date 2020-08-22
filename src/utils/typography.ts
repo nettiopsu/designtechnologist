@@ -5,16 +5,6 @@ const typography = new Typography({
   headerFontFamily: ["Libre Baskerville", "serif"],
   bodyFontFamily: ["Libre Baskerville", "serif"],
   scaleRatio: 2,
-  googleFonts: [
-    {
-      name: "Libre Baskerville",
-      styles: ["400", "700"]
-    },
-    {
-      name: "Roboto",
-      styles: ["400", "700"]
-    }
-  ],
   overrideStyles: () => ({
     h1: {
       textAlign: "center",
