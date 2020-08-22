@@ -14,11 +14,23 @@ interface PageTemplateProps {
       body: any;
     };
   };
+  pageContext: any;
 }
 
+const getPageData = (page: any) => {
+  return page
+    ? {
+        url: `/${page.fields.slug}`,
+        title: page.frontmatter.title
+      }
+    : null;
+};
+
 export default function PageTemplate(props: PageTemplateProps) {
-  const { data } = props;
+  const { data, pageContext } = props;
   const { mdx } = data;
+  const previousPage = getPageData(pageContext.previous);
+  const nextPage = getPageData(pageContext.next);
 
   return (
     <Layout>
@@ -36,6 +48,29 @@ export default function PageTemplate(props: PageTemplateProps) {
       </Row>
 
       <MDXRenderer>{mdx.body}</MDXRenderer>
+
+      <Row className={LayoutChapterStyles.readMore}>
+        <Col xs={12} md={6}>
+          {previousPage && (
+            <>
+              Previous:
+              <div>
+                <a href={previousPage.url}>{previousPage.title}</a>
+              </div>
+            </>
+          )}
+        </Col>
+        <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
+          {nextPage && (
+            <>
+              Next:
+              <div>
+                <a href={nextPage.url}>{nextPage.title}</a>
+              </div>
+            </>
+          )}
+        </Col>
+      </Row>
     </Layout>
   );
 }
