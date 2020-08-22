@@ -41,6 +41,9 @@ const IndexPage = ({
         <li>
           <a href="/book/challenges">Challenges</a>
         </li>
+        <li>
+          <a href="/book/skills">Skills</a>
+        </li>
       </ul>
     </Layout>
   );
