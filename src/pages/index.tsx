@@ -22,7 +22,7 @@ const IndexPage = ({
     <Layout>
       <SEO title="Handbook" />
       <h1>Design technologist handbook</h1>
-      <img src={mainPic}></img>
+      <img src={mainPic} alt=""></img>
       <h3>Chapters</h3>
       <ul>
         <li>
@@ -40,9 +40,6 @@ const IndexPage = ({
         </li>
         <li>
           <a href="/book/challenges">Challenges</a>
-        </li>
-        <li>
-          <a href="/book/license">License</a>
         </li>
       </ul>
     </Layout>
