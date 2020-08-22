@@ -49,7 +49,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
