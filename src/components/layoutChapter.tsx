@@ -29,8 +29,9 @@ export default function PageTemplate(props: PageTemplateProps) {
         </div>
       </div>
 
-      <h1>{mdx.frontmatter.title}</h1>
       <img src={mdx.frontmatter.image.publicURL} alt="" />
+
+      <h1>{mdx.frontmatter.title}</h1>
 
       <div className={LayoutChapterStyles.readMore}>
         Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.

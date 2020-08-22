@@ -8,7 +8,7 @@ const typography = new Typography({
   overrideStyles: () => ({
     h1: {
       textAlign: "center",
-      marginBottom: "80px"
+      marginBottom: "60px"
     },
     img: {
       marginBottom: 0
