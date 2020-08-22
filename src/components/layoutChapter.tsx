@@ -1,6 +1,7 @@
-import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from "react";
+import { Col, Row } from "react-flexbox-grid";
 import Layout from "./layout";
 import LayoutChapterStyles from "./layoutChapter.module.css";
 import SEO from "./seo";
@@ -22,20 +23,17 @@ export default function PageTemplate(props: PageTemplateProps) {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
-
-      <div className={LayoutChapterStyles.upperContainer}>
-        <div className={LayoutChapterStyles.rightCol}>
-          <a href="/">Back</a>
-        </div>
-      </div>
-
       <img src={mdx.frontmatter.image.publicURL} alt="" />
-
       <h1>{mdx.frontmatter.title}</h1>
 
-      <div className={LayoutChapterStyles.readMore}>
-        Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
-      </div>
+      <Row className={LayoutChapterStyles.readMore}>
+        <Col xs={12} md={6}>
+          Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
+        </Col>
+        <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
+          <a href="/">Design Technologist Handbook</a>
+        </Col>
+      </Row>
 
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
