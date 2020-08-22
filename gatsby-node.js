@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create blog post pages.
   const chapters = result.data.allMdx.edges;
   // you'll call `createPage` for each result
-  chapters.forEach(({ node }) => {
+  chapters.forEach(({ node }, index) => {
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
@@ -53,7 +53,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve("./src/components/layoutChapter.tsx"),
       // You can use the values in this context in
       // our page layout component
-      context: { id: node.id }
+      context: {
+        id: node.id,
+        previous: index === 0 ? null : chapters[index - 1].node,
+        next: index === chapters.length - 1 ? null : chapters[index + 1].node
+      }
     });
   });
 };
