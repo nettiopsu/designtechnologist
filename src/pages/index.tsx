@@ -20,7 +20,7 @@ const IndexPage = ({
 }: Props) => {
   return (
     <Layout>
-      <SEO title="Club" />
+      <SEO title="Handbook" />
       <h1>Design technologist handbook</h1>
       <img src={mainPic}></img>
       <h3>Chapters</h3>
