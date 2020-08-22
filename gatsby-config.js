@@ -70,6 +70,13 @@ module.exports = {
         trackingId: "UA-159949142-1",
         head: true
       }
+    },
+    {
+      resolve: `gatsby-plugin-webpack-size`,
+      options: {
+        // Set to true to show bundle sizes in development mode as well
+        development: true
+      }
     }
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
