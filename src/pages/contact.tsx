@@ -8,7 +8,7 @@ import ContactStyles from "./contact.module.css";
 const ContactPage = () => {
   return (
     <Layout>
-      <SEO title="Club" />
+      <SEO title="Contact us" />
       <h1>Contact us</h1>
       <form
         name="contact"
