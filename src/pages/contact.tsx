@@ -10,6 +10,9 @@ const ContactPage = () => {
     <Layout>
       <SEO title="Contact us" />
       <h1>Contact us</h1>
+      Feel free to contact us on any matters related to Design Technologist
+      Handbook and Design Technologist world in general :) Any comments are
+      welcome!
       <form
         name="contact"
         method="post"
