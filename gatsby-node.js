@@ -31,6 +31,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               title
+              order
             }
           }
         }
@@ -42,6 +43,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const chapters = result.data.allMdx.edges;
+
+  chapters.sort((a, b) => {
+    return a.node.frontmatter.order - b.node.frontmatter.order;
+  });
+
   chapters.forEach(({ node }, index) => {
     createPage({
       // This is the slug you created before

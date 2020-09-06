@@ -5,10 +5,22 @@ import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import mainPic from "../images/designtechnologist.svg";
 
+interface Edge {
+  node: {
+    frontmatter: {
+      title: string;
+      order: number;
+    };
+    fields: {
+      slug: string;
+    };
+  };
+}
+
 interface Props {
   data: {
     allMdx: {
-      edges: any[];
+      edges: Edge[];
     };
   };
 }
@@ -25,30 +37,13 @@ const IndexPage = ({
       <img src={mainPic} alt=""></img>
       <h3>Chapters</h3>
       <ul>
-        <li>
-          <a href="/book/searching-for-yourself">Searching for yourself</a>
-        </li>
-        <li>
-          <a href="/book/generalists-specialists-hybrid-t-shaped-people">
-            Generalists, specialists, hybrid and T-shaped people
-          </a>
-        </li>
-        <li>
-          <a href="/book/who-is-a-design-technologist">
-            Who is a design technologist?
-          </a>
-        </li>
-        <li>
-          <a href="/book/challenges">Challenges</a>
-        </li>
-        <li>
-          <a href="/book/skills">Skills</a>
-        </li>
-        <li>
-          <a href="/book/cooperation-with-other-team-members">
-            Cooperation with other team members
-          </a>
-        </li>
+        {edges.map(edge => {
+          return (
+            <li>
+              <a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a>
+            </li>
+          );
+        })}
       </ul>
     </Layout>
   );
@@ -56,11 +51,15 @@ const IndexPage = ({
 
 export const pageQuery = graphql`
   query {
-    allMdx {
+    allMdx(sort: { order: ASC, fields: [frontmatter___order] }) {
       edges {
         node {
           frontmatter {
             title
+            order
+          }
+          fields {
+            slug
           }
         }
       }
