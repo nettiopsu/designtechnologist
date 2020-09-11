@@ -5,6 +5,7 @@ import { Col, Row } from "react-flexbox-grid";
 import Layout from "./layout";
 import LayoutChapterStyles from "./layoutChapter.module.css";
 import SEO from "./seo";
+import { SiteProps } from "../pages";
 
 interface PageTemplateProps {
   data: {
@@ -12,6 +13,9 @@ interface PageTemplateProps {
       frontmatter: any;
       fields: any;
       body: any;
+    };
+    site: {
+      siteMetadata: SiteProps;
     };
   };
   pageContext: any;
@@ -28,7 +32,7 @@ const getPageData = (page: any) => {
 
 export default function PageTemplate(props: PageTemplateProps) {
   const { data, pageContext } = props;
-  const { mdx } = data;
+  const { mdx, site } = data;
   const previousPage = getPageData(pageContext.previous);
   const nextPage = getPageData(pageContext.next);
 
@@ -43,7 +47,7 @@ export default function PageTemplate(props: PageTemplateProps) {
           Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
         </Col>
         <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
-          <a href="/">Design Technologist Handbook</a>
+          <a href="/">{site.siteMetadata.title}</a>
         </Col>
       </Row>
 
@@ -76,6 +80,12 @@ export default function PageTemplate(props: PageTemplateProps) {
 }
 export const pageQuery = graphql`
   query BookChapterQuery($id: String) {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
     mdx(id: { eq: $id }) {
       id
       body

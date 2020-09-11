@@ -17,23 +17,34 @@ interface Edge {
   };
 }
 
+export interface SiteProps {
+  description?: string;
+  lang?: string;
+  meta: [];
+  title?: string;
+}
+
 interface Props {
   data: {
     allMdx: {
       edges: Edge[];
+    };
+    site: {
+      siteMetadata: SiteProps;
     };
   };
 }
 
 const IndexPage = ({
   data: {
-    allMdx: { edges }
+    allMdx: { edges },
+    site
   }
 }: Props) => {
   return (
     <Layout>
       <SEO title="Handbook" />
-      <h1>Design technologist handbook</h1>
+      <h1>{site.siteMetadata.title}</h1>
       <img src={mainPic} alt=""></img>
       <h3>Chapters</h3>
       <ul>
@@ -51,6 +62,12 @@ const IndexPage = ({
 
 export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
     allMdx(sort: { order: ASC, fields: [frontmatter___order] }) {
       edges {
         node {
