@@ -46,7 +46,7 @@ const IndexPage = ({
       <SEO />
       <h1>{site.siteMetadata.title}</h1>
       <img src={mainPic} alt=""></img>
-      <h3>Chapters</h3>
+      <h2>Chapters</h2>
       <ul>
         {edges.map(edge => {
           return (
