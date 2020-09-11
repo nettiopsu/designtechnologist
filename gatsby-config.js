@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Design technologist handbook`,
+    title: `Design Technologist Handbook`,
     description: ``
   },
   plugins: [
@@ -17,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Design technologist handbook`,
-        short_name: `Design techologist`,
+        name: `Design Technologist Handbook`,
+        short_name: `Design Techologist`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
