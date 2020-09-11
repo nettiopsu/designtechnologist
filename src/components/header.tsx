@@ -34,9 +34,10 @@ const Header = () => {
         </div>
         <div className={HeaderStyles.right}>
           <a
-            href="https://github.com/nettiopsu/designtechnologist"
+            rel="noopener"
             target="_blank"
             className={HeaderStyles.iconLink}
+            href="https://github.com/nettiopsu/designtechnologist"
           >
             <img
               src={GithubLogo}
@@ -45,9 +46,10 @@ const Header = () => {
             />
           </a>
           <a
+            rel="noopener"
             target="_blank"
-            href="https://join.slack.com/t/designtechnologists/shared_invite/enQtOTU2MTc4OTE5NDI3LTUzYzZhM2Y0NDEwODgzZWNjNTAxYzVjM2EyNTI4ODIyYjFmZTg1YTRmOTdiNmQ0MDNkZGFhMTFiOGUxNDc5NmM"
             className={HeaderStyles.iconLink}
+            href="https://join.slack.com/t/designtechnologists/shared_invite/enQtOTU2MTc4OTE5NDI3LTUzYzZhM2Y0NDEwODgzZWNjNTAxYzVjM2EyNTI4ODIyYjFmZTg1YTRmOTdiNmQ0MDNkZGFhMTFiOGUxNDc5NmM"
           >
             <img
               src={SlackLogo}
@@ -55,7 +57,7 @@ const Header = () => {
               className={HeaderStyles.icon}
             />
           </a>
-          <a href="/contact" className={HeaderStyles.iconLink}>
+          <a className={HeaderStyles.iconLink} href="/contact">
             <img
               src={MailIcon}
               alt="Send us an e-mail"
