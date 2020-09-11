@@ -43,7 +43,7 @@ const IndexPage = ({
 }: Props) => {
   return (
     <Layout>
-      <SEO title="Handbook" />
+      <SEO />
       <h1>{site.siteMetadata.title}</h1>
       <img src={mainPic} alt=""></img>
       <h3>Chapters</h3>
