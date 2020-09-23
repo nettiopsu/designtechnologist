@@ -11,6 +11,7 @@ import { MDXProvider } from "@mdx-js/react";
 import Header from "./header";
 import LayoutStyles from "./layout.module.css";
 import Footer from "./footer";
+
 interface Props {
   children: any;
 }
@@ -31,7 +32,6 @@ const Layout = ({ children }: Props) => {
       <Header />
       <div className={LayoutStyles.container}>
         <main className={LayoutStyles.content}>{children}</main>
-        <footer></footer>
       </div>
       <Footer />
     </MDXProvider>
