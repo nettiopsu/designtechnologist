@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Design Technologist Handbook`,
@@ -76,6 +80,13 @@ module.exports = {
       options: {
         // Set to true to show bundle sizes in development mode as well
         development: true
+      }
+    },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: process.env.MAILCHIMP_URL,
+        timeout: 3500
       }
     }
 
