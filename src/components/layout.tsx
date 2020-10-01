@@ -26,6 +26,18 @@ const Layout = ({ children }: Props) => {
               <a href="#references">[{props.children}]</a>
             </sup>
           );
+        },
+        refLink: ({ children, ...props }) => {
+          const properties = props as any;
+          return (
+            <>
+              {children} (
+              <a target="_blank" rel="noopener" {...props}>
+                {properties.href}
+              </a>
+              )
+            </>
+          );
         }
       }}
     >
