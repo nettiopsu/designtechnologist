@@ -1,5 +1,6 @@
 module.exports = {
-    future: {
-      removeDeprecatedGapUtilities: true,
-    },
-}
+  future: {
+    removeDeprecatedGapUtilities: true
+  },
+  purge: ["./src/**/*.tsx"]
+};
