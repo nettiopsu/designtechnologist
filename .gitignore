@@ -68,3 +68,4 @@ package-lock.json
 !public/_redirects
 
 .env.development
+.env.production 
