@@ -39,7 +39,16 @@ export default function PageTemplate(props: PageTemplateProps) {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
-      <img src={mdx.frontmatter.image.publicURL} alt="" />
+      <figure
+        className={LayoutChapterStyles.hero}
+        style={{
+          paddingTop: mdx.frontmatter.aspectRatio
+            ? mdx.frontmatter.aspectRatio * 100 + "%"
+            : undefined
+        }}
+      >
+        <img src={mdx.frontmatter.image.publicURL} alt="" />
+      </figure>
       <h1>{mdx.frontmatter.title}</h1>
 
       <Row className={LayoutChapterStyles.readMore}>
@@ -94,6 +103,7 @@ export const pageQuery = graphql`
         image {
           publicURL
         }
+        aspectRatio
       }
       fields {
         readingTime {
