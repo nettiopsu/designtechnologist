@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import mainPic from "../images/designtechnologist.svg";
+import IndexStyles from "./index.module.css";
 
 interface Edge {
   node: {
@@ -45,7 +46,9 @@ const IndexPage = ({
     <Layout>
       <SEO />
       <h1>{site.siteMetadata.title}</h1>
-      <img src={mainPic} alt=""></img>
+      <figure className={IndexStyles.hero}>
+        <img src={mainPic} alt="" />
+      </figure>
       <h2>Chapters</h2>
       <ul>
         {edges.map(edge => {

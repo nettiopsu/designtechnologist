@@ -1,0 +1,15 @@
+.hero {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding-top: 69.358895705%;
+  position: relative;
+  margin-bottom: 80px;
+}
+.hero img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
