@@ -17,13 +17,7 @@ const Footer = () => {
         >
           GitHub
         </a>
-        <a
-          target="_blank"
-          rel="noopener"
-          href="https://join.slack.com/t/designtechnologists/shared_invite/enQtOTU2MTc4OTE5NDI3LTUzYzZhM2Y0NDEwODgzZWNjNTAxYzVjM2EyNTI4ODIyYjFmZTg1YTRmOTdiNmQ0MDNkZGFhMTFiOGUxNDc5NmM"
-        >
-          Slack
-        </a>
+        <a href="/slack">Slack community</a>
         <a href="/license">License</a>
         <a href="/contact">Contact us</a>
       </div>

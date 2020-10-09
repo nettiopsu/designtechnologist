@@ -45,15 +45,10 @@ const Header = () => {
               className={HeaderStyles.icon}
             />
           </a>
-          <a
-            rel="noopener"
-            target="_blank"
-            className={HeaderStyles.iconLink}
-            href="https://join.slack.com/t/designtechnologists/shared_invite/enQtOTU2MTc4OTE5NDI3LTUzYzZhM2Y0NDEwODgzZWNjNTAxYzVjM2EyNTI4ODIyYjFmZTg1YTRmOTdiNmQ0MDNkZGFhMTFiOGUxNDc5NmM"
-          >
+          <a className={HeaderStyles.iconLink} href="/slack">
             <img
               src={SlackLogo}
-              alt="Slack channel"
+              alt="Slack community"
               className={HeaderStyles.icon}
             />
           </a>
