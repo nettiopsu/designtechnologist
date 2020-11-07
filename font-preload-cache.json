@@ -1,0 +1,108 @@
+{
+  "timestamp": 1604737771530,
+  "hash": "4345b989eeb1341022dd7c291e57641f",
+  "assets": {
+    "/book/searching-for-yourself/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/roboto-latin-700-2735a3a69b509faf3577afd25bdf552e.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/book/generalists-specialists-hybrid-t-shaped-people/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/roboto-latin-700-2735a3a69b509faf3577afd25bdf552e.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/book/who-is-a-design-technologist/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/roboto-latin-700-2735a3a69b509faf3577afd25bdf552e.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/book/challenges/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/roboto-latin-700-2735a3a69b509faf3577afd25bdf552e.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/book/skills/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/roboto-latin-700-2735a3a69b509faf3577afd25bdf552e.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true,
+      "/static/libre-baskerville-latin-700-d153d6c1742c48a2f097608bfd0428ea.woff2": true
+    },
+    "/book/cooperation-with-other-team-members/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/roboto-latin-700-2735a3a69b509faf3577afd25bdf552e.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/libre-baskerville-latin-700-d153d6c1742c48a2f097608bfd0428ea.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/book/job-market/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/roboto-latin-700-2735a3a69b509faf3577afd25bdf552e.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/libre-baskerville-latin-700-d153d6c1742c48a2f097608bfd0428ea.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/dev-404-page/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/404/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/contact-thanks/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/contact/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/libre-baskerville-latin-700-d153d6c1742c48a2f097608bfd0428ea.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/license/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/libre-baskerville-latin-700-d153d6c1742c48a2f097608bfd0428ea.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/slack/": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    },
+    "/404.html": {
+      "/static/inconsolata-latin-700-8caa728e7fabd0a8927567953a46e3c2.woff2": true,
+      "/static/libre-baskerville-latin-400-d15ba972040b09041a17f6a751282dcb.woff2": true,
+      "/static/inconsolata-latin-400-3b892623781be87c5d9c0baaf120282f.woff2": true,
+      "/static/roboto-latin-400-479970ffb74f2117317f9d24d9e317fe.woff2": true
+    }
+  }
+}
