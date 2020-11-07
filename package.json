@@ -17,6 +17,7 @@
     "gatsby-plugin-mdx": "^1.0.73",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-postcss": "^2.1.21",
+    "gatsby-plugin-preload-fonts": "^1.2.30",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-plugin-typescript": "^2.1.27",
@@ -61,7 +62,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "ulimit": "sudo su $USER --shell /bin/bash"
+    "ulimit": "sudo su $USER --shell /bin/bash",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "repository": {
     "type": "git",

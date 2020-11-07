@@ -88,7 +88,8 @@ module.exports = {
         endpoint: process.env.MAILCHIMP_URL,
         timeout: 3500
       }
-    }
+    },
+    "gatsby-plugin-preload-fonts"
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
