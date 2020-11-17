@@ -13,6 +13,18 @@ const typography = new Typography({
     },
     img: {
       marginBottom: 0
+    },
+    ul: {
+      marginLeft: "1rem"
+    },
+    "ul li": {
+      paddingLeft: "0.5rem"
+    },
+    ol: {
+      marginLeft: "1rem"
+    },
+    "ol li": {
+      paddingLeft: "0.5rem"
     }
   })
 });
