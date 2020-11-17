@@ -15,13 +15,15 @@ const typography = new Typography({
       marginBottom: 0
     },
     ul: {
-      marginLeft: "1rem"
+      marginLeft: 0,
+      paddingLeft: "1.2rem"
     },
     "ul li": {
       paddingLeft: "0.5rem"
     },
     ol: {
-      marginLeft: "1rem"
+      marginLeft: 0,
+      paddingLeft: "1.2rem"
     },
     "ol li": {
       paddingLeft: "0.5rem"
