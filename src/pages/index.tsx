@@ -53,7 +53,7 @@ const IndexPage = ({
       <ul>
         {edges.map(edge => {
           return (
-            <li>
+            <li key={"article-" + edge.node.fields.slug}>
               <a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a>
             </li>
           );
