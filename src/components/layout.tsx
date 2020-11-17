@@ -31,11 +31,11 @@ const Layout = ({ children }: Props) => {
           const properties = props as any;
           return (
             <>
-              {children} (
+              {children} {children && "("}
               <a target="_blank" rel="noopener" {...props}>
                 {properties.href}
               </a>
-              )
+              {children && "("}
             </>
           );
         }
