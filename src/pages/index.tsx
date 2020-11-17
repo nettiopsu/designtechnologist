@@ -50,7 +50,7 @@ const IndexPage = ({
         <img src={mainPic} alt="" />
       </figure>
       <h2>Chapters</h2>
-      <ul>
+      <ol>
         {edges.map(edge => {
           return (
             <li key={"article-" + edge.node.fields.slug}>
@@ -58,7 +58,7 @@ const IndexPage = ({
             </li>
           );
         })}
-      </ul>
+      </ol>
     </Layout>
   );
 };
