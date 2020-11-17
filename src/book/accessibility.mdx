@@ -1,0 +1,345 @@
+---
+title: "Accessibility"
+image: ../images/accessibility.svg
+aspectRatio: 0.54168504631
+order: 8
+---
+
+One of the new subjects of which a Design Technologist is taking care of is
+accessibility. The accessibility of websites consists of several entities:
+content, user agents (web browsers, media players), assistive technologies,
+user's knowledge, software development, authoring tools (tools for creating
+websites), and evaluation tools. Accessibility covers the same subjects that
+Design Technologists use in their everyday work - design, coding, and user
+experience.
+
+Accessibility has become especially important for many companies and public
+entities when it was introduced in the legislation of many countries. Thus, it
+is not anymore just a question of User Experience, but also law compliance. Web
+accessibility requirements are quite technical and thus mainly people with
+developer background can understand what do these requirements actually mean and
+how they can be implemented. These laws are based on Web Content Accessibility
+Guidelines, which is more often referred as
+[WCAG](https://www.w3.org/TR/WCAG21/). The Web Content Accessibility Guidelines
+(WCAG) are web accessibility guidelines created by the Web Accessibility
+Initiative (WAI) of the World Wide Web Consortium (W3C) - international
+standards organization for the Internet. WCAG is a set of recommendations for
+making the Web more accessible, for people that have temporary or permanent
+difficulties with access to websites.
+
+This set of recommendations is created to serve a wide audience of people and
+thus following it means also improving the website's overall user experience.
+WCAG provides three conformance levels known as Level A, AA, and AAA. According
+to the Web Accessibility Initiative (WAI), a website must satisfy Level A or
+otherwise, some users will find it impossible to access it. If a website cannot
+satisfy the Level AA then some users will find it difficult to access the
+website. Finally, a website may satisfy Level AAA, unless, some users will find
+it somewhat difficult to access the website.<ref>1</ref><ref>2</ref><ref>3</ref>
+
+The list of countries that follow WCAG in their laws includes the USA (update
+Section 508 of the Rehabilitation Act), UK (Equality Act), European Union (Web
+Accessibility Directive and local country laws based on it), Australia
+(Disability Inclusion Act), Israel (Standard 5568), Canada (Jodhan decision).
+These laws are usually based on WCAG 2.0 or 2.1 and can include or not private
+companies into it.
+
+Accessibility directive in the EU extends WCAG requirements by asking web
+service owners to write an accessibility statement that explains which WCAG
+requirements are not improved and describing a feedback channel for users to
+write about accessibility issues. The user should receive an answer within 14
+days and the web service should be ready to provide a user with an alternative
+accessible version of the content. The European Accessibility Act is quite broad
+and covers many products and services, including ATMs, ticketing, check-in
+machines, services related to air, bus, rail, and waterborne passenger
+transport, banking services<ref>4</ref><ref>5</ref>
+
+The WCAG guidelines are located on the website of W3C, but for many users, it
+might be overwhelming to start with the official documentation. There is a
+shorter version "[WCAG checklist](https://webaim.org/standards/wcag/checklist)"
+by WebAIM, which condenses the official WCAG 2.1 specification making it easier
+to implement and verify web pages
+
+## Testing and reporting
+
+### Manual testing and screen readers
+
+Manual testing can be done by using a keyboard and trying the website with a
+screen reader, checking that page elements like links and buttons indicate their
+purpose and state. There are some instructions that can help with the basic
+testing:
+
+- [Google Accessibility: How to review](https://developers.google.com/web/fundamentals/accessibility/how-to-review)
+- [Gov.uk Doing basic accessibility test](https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one)
+
+Default browser web page components like buttons, inputs, labels, etc. should be
+accessible and work quite well with screen readers. That is why it is wise to
+use standard HTML tags and components as much as possible. In the case of custom
+elements (e.g. button that is done with a div tag), it should be taken into
+account WAI ARI practices that are used by browser creators (and other software
+that should work with assistive technologies). One of the ways to do it is to
+make sure that these new custom components use special HTML ARIA tags, which
+screen readers can understand, and mark properly r between relations components.
+WAI-ARIA practices also include information about component interaction with
+keyboard key presses. The more detailed information by component types can be
+found in the WAI-ARIA manual
+
+<p>
+  <refLink href="https://www.w3.org/TR/wai-aria-practices-1.1/" />
+</p>
+
+A screen reader is a technology that helps people with difficulties to access
+and work with digital content. It includes not only websites but also
+applications, audio, and video content, PDF files, and other types of content.
+The main users of screen readers are people with limited vision and, in such
+case, the screen reader reads out loud what is on the screen. The users can
+adapt them to their needs, for example, you can decrease the speed of speech, or
+change the language. Screen readers allow also to navigate through websites and
+applications via the speech output. When trying to explore whether a webpage is
+accessible or not - 2 main questions should be asked: can a user navigate the
+page with a keyboard or screen-reader and are all the page elements properly
+marked up for screen readers. To answer the second question, it is possible to
+use automated testing tools. But to answer first - tools some should use manual
+testing with a screen reader. Listening to your web content rather than looking
+at it can be an interesting experience and can show drawbacks of web page
+component workflow. There are quite many mistakes that would have been hard to
+catch visually. Screen readers are very useful for checking the image
+alternative text quality. Screen readers can also help to identify problems with
+elements' order, table markup, form elements, and many other
+aspects.<ref>6</ref><ref>7</ref><ref>8</ref>
+
+**List of screen readers**
+
+- [VoiceOver](https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios) -
+  screen reader in MacOS and iPhone /iPad
+- [NVDA](https://www.nvaccess.org/) - a screen reader for Windows, free and
+  open-source
+- [TalkBack](https://support.google.com/accessibility/android/answer/6006564?hl=en) -
+  Android
+- [ChromVox](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn) -
+  Chrome
+
+## Automated testing
+
+Many companies are using automated Chrome Dev Tools Audits (built-in Chrome) as
+a measure of success - it shows an easy to understand percentage of passed
+accessibility tests. While this tool can be useful, the automated tests cover
+just part (around 30%) of the all possible accessibility issues and can not be
+used to measure success.
+
+### Browser extensions
+
+**AxE**
+
+The biggest and one of the most popular tools for automated web accessibility
+testing, because it is used as a basement for Google Chrome Dev Tools
+accessibility testing and e.g. addons for Storybook. It supports WCAG 2.1 and
+analyzes part of its issues (some 2.0 issues + 2 of 17 issues for 2.1).
+
+AxE can be used directly in Google Chrome DevTools, as a separate extension for
+Google Chrome, as part of Microsoft Accessibility Insights tool, or as the
+terminal application for testing.
+
+<p>
+  <refLink href="https://www.deque.com/axe/" />
+</p>
+
+**Accessibility Insights for Web Accessibility**
+
+Insights for Web is an extension for Chrome and the new Microsoft Edge that
+helps developers find and fix accessibility issues in web apps and sites. The
+tool supports two primary scenarios: FastPass is a lightweight, two-step process
+that helps developers identify common, high-impact accessibility issues in less
+than five minutes. The assessment allows anyone with HTML skills to verify that
+a web app or web site is compliant with Web Content Accessibility Guidelines
+(WCAG) 2.1 Level AA
+
+<p>
+  <refLink href="https://accessibilityinsights.io/docs/en/web/overview" />
+</p>
+
+**IBM Equal Access Accessibility Checker**
+
+The IBM Equal Access Accessibility Checker is an open-source tool for web
+developers and auditors that utilizes IBM's accessibility rule engine, which
+detects accessibility issues for web pages and web applications. The extension
+integrates into the browser development tools, providing an integrated checking
+experience, helping users quickly identify the source of accessibility issues,
+and try to fix them.
+
+<p>
+  <refLink href="https://chrome.google.com/webstore/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp" />
+</p>
+
+**Wave Accessibility tool WAVE**
+
+WAVE is a suite of evaluation tools that helps authors make their web content
+more accessible to individuals with disabilities. WAVE can identify many
+accessibilities and Web Content Accessibility Guideline (WCAG) errors, but also
+facilitates human evaluation of web content. You can use the online WAVE tool by
+entering a web page address (URL) in the field above. WAVE Firefox and Chrome
+extensions are available for testing accessibility directly within your web
+browser - handy for checking password-protected, locally stored, or highly
+dynamic pages.
+
+<p>
+  <refLink href="https://wave.webaim.org" />
+</p>
+
+**Chrome Lens**
+
+The ChromeLens extension allows to simulate an experience of a blind or
+colorblind person and contains trackers to visually show the path of a
+tab/shift-tab navigation flow with the keyboard.
+
+<p>
+  <refLink href="https://chrome.google.com/webstore/detail/chromelens/idikgljglpfilbhaboonnpnnincjhjkd" />
+</p>
+
+### Software testing
+
+**Pa11y**
+
+Pa11y is a set of free and open-source tools that aim to help designers and
+developers make accessible websites. They offer a range of utilities, including
+a dashboard interface, web service, and a desktop application. Behind the
+scenes, Pa11y CI uses HTML CodeSniffer in Headless Chrome to evaluate web pages
+based on the WCAG 2.1
+
+<p>
+  <refLink href="https://pa11y.org/" />
+</p>
+
+**Axe**
+
+Axe is used in Chrome Dev Tools for usability testing, but by itself, it can be
+quite raw for use in automated testing. There are axe-core, which allows
+creating scripts for testing and axe-cli for execution in a terminal.
+
+<p>
+  <refLink href="https://github.com/dequelabs/axe-core" />
+</p>
+
+**jest-axe**
+
+jest-axe is an npm package that wraps axe-core for use in Jest tests. It takes
+HTML input and runs axe tests against it alongside other Jest tests, outputting
+any failures to the console and failing a build in the same way as a standard
+test.
+
+<p>
+  <refLink href="https://github.com/nickcolley/jest-axe" />
+</p>
+
+**Paypal AATT**
+
+AATT includes HTML CodeSniffer, Axe, and Chrome developer tool with Express and
+PhantomJS, which runs on Node.
+
+<p>
+  <refLink href="https://github.com/paypal/AATT" />
+</p>
+
+**Eslint for JSX**
+
+A11Y Pairing this plugin with an editor lint plugin, you can bake accessibility
+standards into your application in real-time.
+
+<p>
+  <refLink href="https://github.com/evcohen/eslint-plugin-jsx-a11y" />
+</p>
+
+**Webhint**
+
+webhint is a customizable linting tool that helps you improve your site's
+accessibility, speed, cross-browser compatibility, and more by checking your
+code for best practices and common errors. Can be installed as VS Code plugin as
+well and as CLI
+
+<p>
+  <refLink href="https://webhint.io/" />
+</p>
+
+## Accessibility test checklist
+
+Each of the projects should be checked for accessibility separately. Any changes
+to design and structure can bring new challenges and accessibility should be
+rechecked.
+
+**Accessibility should be checked on 3 levels**
+
+1. Design (contrasts, colors, alignments, language, UI logic)
+2. Technical (taking into account assistive technologies)
+3. Usability (testing with assistive technology, with real users)
+
+**General principles**
+
+- Hiding all visual elements that are selectable by a screen reader, but do not
+  bring any information (textual description) with it
+- Following HTML5 semantics, as it can be used by screen readers (headings,
+  headers, and footer, navigation, etc.)
+- If not possible to change texts that do not bring with them any useful
+  information ("Click here"). then add more detailed information in nearby
+  interactive elements that can have such description, e.g. checkboxes, radio
+  buttons, and fields with a label
+- Control focus with Javascript when needed (Modals, Popup menu)
+- Let users skip navigation and groups of items (checkboxes, radio buttons)
+- Make sure that table tags have description and names of columns
+
+**Examples**
+
+- Headings H1-H6 (preferably one H1 per page)
+- Semantic landmark tags (Header, Footer, Navigation, Aside, etc.)
+- Labels for checkboxes, radio buttons, and inputs
+- Logical connections between elements and their textual descriptions
+- Readability of links (avoid just “Read more” or overcome it with ARIA labels
+  with additional information)
+- Skipping non-informative elements of design (design images, \* asterisks as a
+  marker for a required field, etc.
+- Describing pictures well with informative text when needed
+- Descriptions for infographics Special screen-reader links that suggest you
+  skip navigation and go directly to content
+- Hiding icons from the accessibility tree, if they do not bring any textual
+  information
+- Avoid usage of carousels Web components as elements outer DOM elements are not
+  connected with Shadow DOM
+- Using arrows for moving in groups of checkboxes and radio buttons
+
+## Reporting
+
+The official W3C organization tool that can help to generate a report according
+to the Website Accessibility Conformance Evaluation Methodology (WCAG-EM). It
+does not perform any accessibility checks, but has an interactive form with
+links to WCAG and can build a structured report
+
+<p>
+  <refLink href="https://www.w3.org/WAI/eval/report-tool/" />
+</p>
+
+## References
+
+1. <refLink href="https://en.wikipedia.org/wiki/Web_accessibility">
+     Wikipedia. Web accessibility
+   </refLink>
+2. <refLink href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines">
+     Wikipedia. Web Content Accessibility Guidelines
+   </refLink>
+3. <refLink href="https://www.pinsentmasons.com/out-law/guides/disabled-access-to-websites-under-uk-law">
+     Pinsent Masons, Out-Law Guide. Disabled access to websites under UK law
+   </refLink>
+4. <refLink href="https://ec.europa.eu/social/BlobServlet?docId=14869&langId=en">
+     European Comission. European Accessibility act - Improving the
+     accessibility of products and services in the single market
+   </refLink>
+5. <refLink href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016L2102&rid=3">
+     Official Journal of the European Union, 2.12.2016, L 327/1. DIRECTIVE (EU)
+     2016/2102 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 26 October 2016
+     on the accessibility of the websites and mobile applications of public
+     sector bodies
+   </refLink>
+6. <refLink href="https://abilitynet.org.uk/factsheets/introduction-screen-readers">
+     AbilityNet. An introduction to screen readers
+   </refLink>
+7. <refLink href="https://developers.google.com/web/tools/chrome-devtools/accessibility/reference">
+     Basques K. Accessibility Reference
+   </refLink>
+8. <refLink href="https://webaim.org/articles/screenreader_testing/" />
