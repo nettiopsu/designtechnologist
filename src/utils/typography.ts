@@ -24,10 +24,14 @@ const typography = new Typography({
     ol: {
       marginLeft: 0,
       listStyle: "none",
-      counterReset: "ol"
+      counterReset: "ol",
+      display: "flex",
+      flexWrap: "wrap"
     },
     "ol li": {
-      counterIncrement: "ol"
+      counterIncrement: "ol",
+      display: "flex",
+      width: "100%"
     },
     "ol li:before": {
       content: "counter(ol) '.'",
