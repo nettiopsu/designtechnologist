@@ -23,10 +23,15 @@ const typography = new Typography({
     },
     ol: {
       marginLeft: 0,
-      paddingLeft: "1.2rem"
+      listStyle: "none",
+      counterReset: "ol"
     },
     "ol li": {
-      paddingLeft: "0.5rem"
+      counterIncrement: "ol"
+    },
+    "ol li:before": {
+      content: "counter(ol) '.'",
+      marginRight: "1rem"
     }
   })
 });
