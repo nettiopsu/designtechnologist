@@ -11,12 +11,23 @@
   align-items: center;
 }
 
+.container a {
+  color: white;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
 .left {
-  flex: 2;
+  flex: 1;
 }
 
 .right {
-  flex: 1;
+  flex: auto;
   text-align: right;
 }
 
@@ -25,10 +36,12 @@
 }
 
 .icon {
-  height: 32px;
-  width: 32px;
-  margin-right: 16px;
-  display: block;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 8px;
+  margin-left: 16px;
 }
 
 .iconLink {

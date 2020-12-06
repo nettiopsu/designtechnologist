@@ -33,6 +33,15 @@ const Header = () => {
           </Link>
         </div>
         <div className={HeaderStyles.right}>
+          <a className={HeaderStyles.iconLink} href="/slack">
+            <img
+              src={SlackLogo}
+              alt="Slack community"
+              className={HeaderStyles.icon}
+              aria-hidden="true"
+            />
+            Slack community
+          </a>
           <a
             rel="noopener"
             target="_blank"
@@ -43,21 +52,18 @@ const Header = () => {
               src={GithubLogo}
               alt="Github repository"
               className={HeaderStyles.icon}
+              aria-hidden="true"
             />
-          </a>
-          <a className={HeaderStyles.iconLink} href="/slack">
-            <img
-              src={SlackLogo}
-              alt="Slack community"
-              className={HeaderStyles.icon}
-            />
+            Github repository
           </a>
           <a className={HeaderStyles.iconLink} href="/contact">
             <img
               src={MailIcon}
-              alt="Send us an e-mail"
+              alt="Contact us"
               className={HeaderStyles.icon}
+              aria-hidden="true"
             />
+            Contact us
           </a>
         </div>
       </div>
