@@ -11,6 +11,7 @@ import { MDXProvider } from "@mdx-js/react";
 import Header from "./header";
 import LayoutStyles from "./layout.module.css";
 import Footer from "./footer";
+import RefLink from "./reflink";
 
 interface Props {
   children: any;
@@ -27,18 +28,7 @@ const Layout = ({ children }: Props) => {
             </sup>
           );
         },
-        refLink: ({ children, ...props }) => {
-          const properties = props as any;
-          return (
-            <>
-              {children} {children && "("}
-              <a target="_blank" rel="noopener" {...props}>
-                {properties.href}
-              </a>
-              {children && ")"}
-            </>
-          );
-        }
+        refLink: RefLink
       }}
     >
       <Header />
