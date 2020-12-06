@@ -35,7 +35,7 @@ const Layout = ({ children }: Props) => {
               <a target="_blank" rel="noopener" {...props}>
                 {properties.href}
               </a>
-              {children && "("}
+              {children && ")"}
             </>
           );
         }
