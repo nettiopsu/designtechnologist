@@ -1,5 +1,6 @@
 import React, { FormEvent, useRef, useState } from "react";
 import NewsletterStyles from "./newsletter.module.css";
+import CommonStyles from "../css/common.module.css";
 import addToMailchimp from "gatsby-plugin-mailchimp";
 
 const Newsletter = () => {
@@ -27,39 +28,53 @@ const Newsletter = () => {
 
   return (
     <div className={NewsletterStyles.container}>
-      <form onSubmit={e => handleSubmit(e)}>
-        <div className={NewsletterStyles.header}>
-          Design Technologist Club Newsletter
-        </div>
-        <div className={NewsletterStyles.text}>
-          Join Design Technologist Club and receive technology news, manuals,
-          tips and tricks
-        </div>
-        {!isSuccess && (
-          <div className={NewsletterStyles.text}>
-            <div className="flex items-center">
-              <input
-                type="type"
-                id="email-subscription"
-                ref={email}
-                placeholder={"E-mail"}
-                aria-label="E-mail"
-                className="w-full appearance-none border rounded w-full mr-3 py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-              />
-              <button
-                type="submit"
-                className={
-                  "hover:bg-blue-700 text-white font-bold py-1 px-6 rounded " +
-                  NewsletterStyles.button
-                }
-              >
-                Subscribe
-              </button>
+      <form onSubmit={e => handleSubmit(e)} className={CommonStyles.form}>
+        <div>
+          <div>
+            <div>
+              <div className={NewsletterStyles.header}>
+                <div className={NewsletterStyles.dot} /> Design Technologist
+                Club Newsletter
+              </div>
+              <div className={NewsletterStyles.text}>
+                Join Design Technologist Club and receive technology news,
+                manuals, tips and tricks
+              </div>
+
+              <div>
+                {!isSuccess && (
+                  <div>
+                    <div
+                      className={
+                        "flex items-center " + NewsletterStyles.fieldsContainer
+                      }
+                    >
+                      <input
+                        type="type"
+                        id="email-subscription"
+                        ref={email}
+                        placeholder={"E-mail"}
+                        aria-label="E-mail"
+                        className="flex-1 appearance-none border rounded mr-3 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <button type="submit" className={CommonStyles.button}>
+                        Subscribe
+                      </button>
+                    </div>
+                  </div>
+                )}
+                {message && (
+                  <div
+                    id="newsletter-alert"
+                    className={NewsletterStyles.text}
+                    role="alert"
+                  >
+                    {message}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        )}
-        <div id="woop" className={NewsletterStyles.text} role="alert">
-          {message}
         </div>
       </form>
     </div>
