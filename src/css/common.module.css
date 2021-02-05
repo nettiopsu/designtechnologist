@@ -1,0 +1,27 @@
+.button {
+  background-color: #fff;
+  border: solid 2px #233d4d;
+  box-shadow: 5px 5px 0 #0899bc;
+  font-family: Roboto;
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 32px;
+  color: #233d4d;
+}
+
+.button:hover {
+  background-color: #233d4d;
+  color: #fff;
+}
+
+.form {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+.signature {
+  font-size: 0.8rem;
+  font-style: italic;
+  font-family: "Libre Baskerville", "serif";
+}
