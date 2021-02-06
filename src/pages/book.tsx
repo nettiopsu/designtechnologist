@@ -33,7 +33,7 @@ const BookPage = ({
 }: Props) => {
   return (
     <Layout>
-      <SEO title="Design Technologist Handbook" />
+      <SEO title="Handbook" />
       <figure className={HandbookStyles.hero}>
         <img src={mainPic} alt="" />
       </figure>

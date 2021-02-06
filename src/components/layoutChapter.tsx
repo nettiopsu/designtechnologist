@@ -38,7 +38,11 @@ export default function PageTemplate(props: PageTemplateProps) {
 
   return (
     <Layout>
-      <SEO title={mdx.frontmatter.title} />
+      <SEO
+        title={mdx.frontmatter.title}
+        description={mdx.frontmatter.description}
+        mainTitle="Design Technologist Handbook"
+      />
       <figure
         className={LayoutChapterStyles.hero}
         style={{
@@ -56,7 +60,7 @@ export default function PageTemplate(props: PageTemplateProps) {
           Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
         </Col>
         <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
-          <a href="/">{site.siteMetadata.title}</a>
+          <a href="/book">Design Technologist Handbook</a>
         </Col>
       </Row>
 

@@ -25,6 +25,7 @@ export interface SiteProps {
   lang?: string;
   meta: [];
   title?: string;
+  mainTitle?: string;
 }
 
 interface Props {

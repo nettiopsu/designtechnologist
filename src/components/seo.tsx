@@ -11,7 +11,8 @@ import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { SiteProps } from "../pages";
 
-function SEO({ description, lang, meta, title }: SiteProps) {
+function SEO(props: SiteProps) {
+  const { description, lang, meta, title, mainTitle } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -34,7 +35,7 @@ function SEO({ description, lang, meta, title }: SiteProps) {
       }}
       title={
         title
-          ? title + " | " + site.siteMetadata.title
+          ? title + " | " + (mainTitle || site.siteMetadata.title)
           : site.siteMetadata.title
       }
       meta={[

@@ -16,7 +16,7 @@ const plugins = [
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `Design Technologist Handbook`,
+      name: `Design Technologist Club`,
       short_name: `Design Techologist`,
       start_url: `/`,
       background_color: `#663399`,
@@ -97,7 +97,7 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
   siteMetadata: {
-    title: `Design Technologist Handbook`,
+    title: `Design Technologist Club`,
     description: ``
   },
   plugins
