@@ -44,7 +44,7 @@ const IndexPage = ({
   }
 }: Props) => {
   return (
-    <Layout twoColumns={true}>
+    <Layout wide={true}>
       <SEO />
       <h1 className={IndexStyles.title}>Design Technologist Club</h1>
       <Row>

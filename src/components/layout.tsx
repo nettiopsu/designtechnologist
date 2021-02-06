@@ -15,10 +15,10 @@ import RefLink from "./reflink";
 
 interface Props {
   children: any;
-  twoColumns?: boolean;
+  wide?: boolean;
 }
 
-const Layout = ({ children, twoColumns }: Props) => {
+const Layout = ({ children, wide }: Props) => {
   return (
     <MDXProvider
       components={{
@@ -33,7 +33,7 @@ const Layout = ({ children, twoColumns }: Props) => {
       }}
     >
       <Header />
-      <Container twoColumns={twoColumns}>{children}</Container>
+      <Container wide={wide}>{children}</Container>
       <Footer />
     </MDXProvider>
   );

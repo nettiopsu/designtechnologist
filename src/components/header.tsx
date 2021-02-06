@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header className={HeaderStyles.root}>
-      <Container twoColumns={true}>
+      <Container wide={true}>
         <div className={HeaderStyles.container}>
           <div className={HeaderStyles.left}>
             <Link to="/">

@@ -4,18 +4,16 @@ import ContainerStyles from "./container.module.css";
 
 interface Props {
   children: any;
-  twoColumns?: boolean;
+  wide?: boolean;
 }
 
-const Container = ({ children, twoColumns }: Props) => {
+const Container = ({ children, wide }: Props) => {
   return (
     <div
       className={
         ContainerStyles.container +
         " " +
-        (twoColumns
-          ? ContainerStyles.containerTwoColumns
-          : ContainerStyles.containerOneColumn)
+        (wide ? ContainerStyles.containerWide : ContainerStyles.containerNarrow)
       }
     >
       {children}
