@@ -1,19 +1,4 @@
 .container {
   margin: 0 auto;
-  max-width: 960px;
-  padding: 80px 16px 0;
-  margin-bottom: 80px;
-}
-
-.content {
-  margin: 0 auto;
-  max-width: 620px;
-}
-
-.content a {
-  color: #000;
-}
-
-.content a:visited {
-  color: #000;
+  padding: 80px 0;
 }

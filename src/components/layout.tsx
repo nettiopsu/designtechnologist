@@ -8,16 +8,17 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 
+import Container from "./container";
 import Header from "./header";
-import LayoutStyles from "./layout.module.css";
 import Footer from "./footer";
 import RefLink from "./reflink";
 
 interface Props {
   children: any;
+  twoColumns?: boolean;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, twoColumns }: Props) => {
   return (
     <MDXProvider
       components={{
@@ -32,9 +33,7 @@ const Layout = ({ children }: Props) => {
       }}
     >
       <Header />
-      <div className={LayoutStyles.container}>
-        <main className={LayoutStyles.content}>{children}</main>
-      </div>
+      <Container twoColumns={twoColumns}>{children}</Container>
       <Footer />
     </MDXProvider>
   );
