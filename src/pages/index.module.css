@@ -2,7 +2,7 @@
   width: 100%;
   overflow: hidden;
   margin: 0;
-  padding-top: 69.358895705%;
+  padding-top: 59.565385%;
   position: relative;
   margin-bottom: 80px;
 }
@@ -12,4 +12,38 @@
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
+}
+
+.flexContainer {
+  display: "flex";
+}
+
+.flexItem {
+  flex: "1";
+}
+
+.left {
+  font-family: "Roboto";
+  font-size: 1rem;
+  background-color: #f9f9fa;
+  padding: 56px 40px;
+  border-radius: 15px;
+  margin-bottom: 64px;
+}
+
+.left,
+.right {
+  padding: calc(8px + 3.5vw) calc(8px + 2.5vw);
+}
+
+.title {
+  text-align: left;
+  font-size: calc(2rem + 4vw);
+  margin-bottom: 80px;
+}
+
+@media only screen and (min-width: 450px) {
+  .title {
+    font-size: 5rem;
+  }
 }
