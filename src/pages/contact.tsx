@@ -4,22 +4,28 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import "./contact.css";
 import ContactStyles from "./contact.module.css";
+import CommonStyles from "../css/common.module.css";
+import Signature from "../components/signature";
 
 const ContactPage = () => {
   return (
     <Layout>
-      <SEO title="Contact us" />
-      <h1>Contact us</h1>
+      <SEO title="Contacts" />
+      <h1>Contacts</h1>
       <div className={ContactStyles.intro}>
-        Feel free to contact us on any matters related to the Design
+        Feel free to contact me on any matters related to the Design
         Technologist Handbook and Design Technologist world in general. Any
-        comments are welcome
+        comments are welcome!
+      </div>
+      <div className={ContactStyles.intro}>
+        <Signature />
       </div>
       <form
         name="contact"
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        className={CommonStyles.form}
       >
         <input type="hidden" name="bot-field" />{" "}
         <input type="hidden" name="form-name" value="contact" />
@@ -53,13 +59,7 @@ const ContactPage = () => {
           <div data-netlify-recaptcha="true"></div>
         </div>
         <div className="flex items-center justify-end">
-          <button
-            className={
-              "text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline " +
-              ContactStyles.button
-            }
-            type="submit"
-          >
+          <button className={CommonStyles.button} type="submit">
             Send
           </button>
         </div>
