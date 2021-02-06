@@ -1,14 +1,14 @@
 .root {
   background: #233d4d;
-  padding-right: 16px;
+  margin-bottom: 64px;
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 960px;
-  height: 64px;
+  min-height: 64px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .container a {
@@ -23,16 +23,16 @@
 }
 
 .left {
-  flex: 1;
+  flex-basis: 304px;
 }
 
 .right {
-  flex: auto;
-  text-align: right;
 }
 
 .logo {
   display: block;
+  width: 280px;
+  height: 64px;
 }
 
 .icon {
@@ -47,10 +47,4 @@
 .iconLink {
   vertical-align: middle;
   display: inline-block;
-}
-
-@media only screen and (max-width: 450px) {
-  .right {
-    display: none;
-  }
 }
