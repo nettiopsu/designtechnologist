@@ -41,10 +41,11 @@
   display: inline-block;
   vertical-align: text-top;
   margin-right: 8px;
-  margin-left: 16px;
 }
 
 .iconLink {
   vertical-align: middle;
   display: inline-block;
+  margin-right: 16px;
+  padding: 8px 0;
 }
