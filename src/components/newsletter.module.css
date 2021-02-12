@@ -1,5 +1,5 @@
 .container {
-  margin: 80px auto 32px auto;
+  margin: calc(2rem + 3vw) auto 32px auto;
   padding: 20px 32px 14px;
   border: 1px #ededf0 solid;
   font-size: 16px;
@@ -37,4 +37,10 @@
 .fieldsContainer input,
 .fieldsContainer button {
   margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    margin-top: 80px;
+  }
 }
