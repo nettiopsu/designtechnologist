@@ -11,6 +11,7 @@ interface Edge {
     frontmatter: {
       title?: string;
       order: number;
+      appendix?: boolean;
     };
     fields: {
       slug: string;
@@ -42,9 +43,8 @@ const BookPage = ({
         {edges.map(edge => {
           return (
             <li key={"article-" + edge.node.fields.slug}>
-              <a href={"/" + edge.node.fields.slug}>
-                {edge.node.frontmatter.title}
-              </a>
+              <a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a>
+              {edge.node.frontmatter.appendix && " (Appendix)"}
             </li>
           );
         })}
@@ -67,6 +67,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             order
+            appendix
           }
           fields {
             slug

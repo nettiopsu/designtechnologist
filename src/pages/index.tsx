@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -13,6 +13,7 @@ interface Edge {
     frontmatter: {
       title?: string;
       order: number;
+      appendix?: boolean;
     };
     fields: {
       slug: string;
@@ -98,6 +99,7 @@ const IndexPage = ({
                     <a href={edge.node.fields.slug}>
                       {edge.node.frontmatter.title}
                     </a>
+                    {edge.node.frontmatter.appendix && " (Appendix)"}
                   </li>
                 );
               })}
@@ -123,6 +125,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             order
+            appendix
           }
           fields {
             slug
