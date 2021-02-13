@@ -43,7 +43,9 @@ const BookPage = ({
         {edges.map(edge => {
           return (
             <li key={"article-" + edge.node.fields.slug}>
-              <a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a>
+              <a href={"/" + edge.node.fields.slug}>
+                {edge.node.frontmatter.title}
+              </a>
               {edge.node.frontmatter.appendix && " (Appendix)"}
             </li>
           );
