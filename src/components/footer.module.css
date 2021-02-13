@@ -9,6 +9,7 @@
   font-size: 14px;
   margin-right: 16px;
   font-family: Roboto, sans-serif;
+  white-space: nowrap;
 }
 
 .container a:visited {
