@@ -108,6 +108,7 @@ export const pageQuery = graphql`
           publicURL
         }
         aspectRatio
+        description
       }
       fields {
         readingTime {
