@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-require("typeface-roboto");
-require("typeface-libre-baskerville");
-require("typeface-inconsolata");
+
+import "./src/css/font-roboto.css";
+import "./src/css/font-libre-baskerville.css";
+import "./src/css/font-inconsolata.css";
