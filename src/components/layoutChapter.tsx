@@ -70,7 +70,7 @@ export default function PageTemplate(props: PageTemplateProps) {
         <Col xs={12} md={6}>
           {previousPage && (
             <>
-              Previous:
+              Previous article:
               <div>
                 <a href={previousPage.url}>{previousPage.title}</a>
               </div>
@@ -80,7 +80,7 @@ export default function PageTemplate(props: PageTemplateProps) {
         <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
           {nextPage && (
             <>
-              Next:
+              Next article:
               <div>
                 <a href={nextPage.url}>{nextPage.title}</a>
               </div>

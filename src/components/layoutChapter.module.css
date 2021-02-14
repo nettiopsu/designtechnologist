@@ -7,11 +7,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .readMore {
   font-size: 16px;
   font-family: Roboto, sans-serif;
   font-weight: bold;
-  margin-bottom: 32px;
+  margin-top: 64px;
+}
+
+.readMore > div {
+  margin-bottom: 16px;
 }
 
 @media only screen and (min-width: 768px) {
