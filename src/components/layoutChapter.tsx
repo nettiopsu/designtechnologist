@@ -4,8 +4,10 @@ import React from "react";
 import { Col, Row } from "react-flexbox-grid";
 import Layout from "./layout";
 import LayoutChapterStyles from "./layoutChapter.module.css";
+import CommonStyles from "../css/common.module.css";
 import SEO from "./seo";
 import { SiteProps } from "../pages";
+import RefLink from "./reflink";
 
 interface PageTemplateProps {
   data: {
@@ -88,6 +90,20 @@ export default function PageTemplate(props: PageTemplateProps) {
           )}
         </Col>
       </Row>
+      {mdx.frontmatter.references && (
+        <div className={LayoutChapterStyles.references}>
+          <h2 id="references">References</h2>
+          <ol>
+            {mdx.frontmatter.references.map((reference: any) => {
+              return (
+                <li key={"reflink-" + reference.href}>
+                  <RefLink href={reference.href}>{reference.text}</RefLink>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      )}
     </Layout>
   );
 }
@@ -109,6 +125,10 @@ export const pageQuery = graphql`
         }
         aspectRatio
         description
+        references {
+          text
+          href
+        }
       }
       fields {
         readingTime {

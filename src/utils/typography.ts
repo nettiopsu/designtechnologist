@@ -34,7 +34,7 @@ const typography = new Typography({
     },
     "ol li:before": {
       content: "counter(ol) '.'",
-      marginRight: "1rem"
+      marginRight: "1em"
     }
   })
 });
