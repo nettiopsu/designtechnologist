@@ -8,6 +8,22 @@ import CommonStyles from "../css/common.module.css";
 import SEO from "./seo";
 import { SiteProps } from "../pages";
 import RefLink from "./reflink";
+import {
+  EmailIcon,
+  EmailShareButton,
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  RedditIcon,
+  RedditShareButton,
+  TelegramIcon,
+  TelegramShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton
+} from "react-share";
 
 interface PageTemplateProps {
   data: {
@@ -93,6 +109,34 @@ export default function PageTemplate(props: PageTemplateProps) {
           </Col>
         )}
       </Row>
+
+      <div className={LayoutChapterStyles.shareButtonContainer}>
+        <div className={LayoutChapterStyles.shareButtonContainerHeader}>
+          Share in social media:
+        </div>
+        <TwitterShareButton url={window.location.href}>
+          <TwitterIcon size={32} round={true} />
+        </TwitterShareButton>
+        <FacebookShareButton url={window.location.href}>
+          <FacebookIcon size={32} round={true} />
+        </FacebookShareButton>
+        <LinkedinShareButton url={window.location.href}>
+          <LinkedinIcon size={32} round={true} />
+        </LinkedinShareButton>
+        <RedditShareButton url={window.location.href}>
+          <RedditIcon size={32} round={true} />
+        </RedditShareButton>
+        <TelegramShareButton url={window.location.href}>
+          <TelegramIcon size={32} round={true} />
+        </TelegramShareButton>
+        <WhatsappShareButton url={window.location.href}>
+          <WhatsappIcon size={32} round={true} />
+        </WhatsappShareButton>
+        <EmailShareButton url={window.location.href}>
+          <EmailIcon size={32} round={true} />
+        </EmailShareButton>
+      </div>
+
       {mdx.frontmatter.references && (
         <div className={LayoutChapterStyles.references}>
           <div id="references" className={LayoutChapterStyles.referenceTitle}>
