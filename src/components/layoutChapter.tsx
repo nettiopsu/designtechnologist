@@ -95,7 +95,9 @@ export default function PageTemplate(props: PageTemplateProps) {
       </Row>
       {mdx.frontmatter.references && (
         <div className={LayoutChapterStyles.references}>
-          <h2 id="references">References</h2>
+          <div id="references" className={LayoutChapterStyles.referenceTitle}>
+            References:
+          </div>
           <ol>
             {mdx.frontmatter.references.map((reference: any) => {
               return (

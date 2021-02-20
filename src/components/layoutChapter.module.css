@@ -44,7 +44,12 @@
 .references {
   font-size: 14px;
   font-family: Roboto, sans-serif;
-  border-top: 1px solid lightgray;
-  padding-top: 64px;
-  margin-top: 48px;
+}
+
+.referenceTitle {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
 }
