@@ -1,3 +1,7 @@
+const fs = require("fs");
+const gracefulFs = require("graceful-fs");
+gracefulFs.gracefulify(fs);
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 });
