@@ -16,8 +16,7 @@ const typography = new Typography({
     },
     ul: {
       marginLeft: 0,
-      paddingLeft: "1.2rem",
-      marginBottom: 0
+      paddingLeft: "1.2rem"
     },
     "ul li": {
       paddingLeft: "0.5rem"
@@ -25,8 +24,7 @@ const typography = new Typography({
     ol: {
       marginLeft: 0,
       listStyle: "none",
-      counterReset: "ol",
-      marginBottom: 0
+      counterReset: "ol"
     },
     "ol li": {
       counterIncrement: "ol",
