@@ -61,98 +61,105 @@ export default function PageTemplate(props: PageTemplateProps) {
         description={mdx.frontmatter.description}
         mainTitle="Design Technologist Handbook"
       />
-      <figure
-        className={LayoutChapterStyles.hero}
-        style={{
-          paddingTop: mdx.frontmatter.aspectRatio
-            ? mdx.frontmatter.aspectRatio * 100 + "%"
-            : undefined
-        }}
-      >
-        <img src={mdx.frontmatter.image.publicURL} alt="" />
-      </figure>
-      <h1>{mdx.frontmatter.title}</h1>
+      <article>
+        <figure
+          className={LayoutChapterStyles.hero}
+          style={{
+            paddingTop: mdx.frontmatter.aspectRatio
+              ? mdx.frontmatter.aspectRatio * 100 + "%"
+              : undefined
+          }}
+        >
+          <img src={mdx.frontmatter.image.publicURL} alt="" />
+        </figure>
+        <h1>{mdx.frontmatter.title}</h1>
 
-      <Row className={LayoutChapterStyles.readMore}>
-        <Col xs={12} md={6}>
-          Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
-        </Col>
-        <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
-          <a href="/book">Design Technologist Handbook</a>
-        </Col>
-      </Row>
-      <MDXRenderer>{mdx.body}</MDXRenderer>
-
-      <Row className={LayoutChapterStyles.readMore}>
-        {previousPage && (
-          <Col xs={12} md={nextPage ? 6 : 12}>
-            <>
-              Previous article:
-              <div>
-                <a href={previousPage.url}>{previousPage.title}</a>
-              </div>
-            </>
+        <Row className={LayoutChapterStyles.readMore}>
+          <Col xs={12} md={6}>
+            Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
           </Col>
-        )}
-        {nextPage && (
-          <Col
-            xs={12}
-            md={previousPage ? 6 : 12}
-            className={LayoutChapterStyles.rightCol}
-          >
-            <>
-              Next article:
-              <div>
-                <a href={nextPage.url}>{nextPage.title}</a>
-              </div>
-            </>
+          <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
+            <a href="/book">Design Technologist Handbook</a>
           </Col>
-        )}
-      </Row>
+        </Row>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
 
-      <div className={LayoutChapterStyles.shareButtonContainer}>
-        <div className={LayoutChapterStyles.shareButtonContainerHeader}>
-          Share in social media:
-        </div>
-        <TwitterShareButton url={window.location.href}>
-          <TwitterIcon size={32} round={true} />
-        </TwitterShareButton>
-        <FacebookShareButton url={window.location.href}>
-          <FacebookIcon size={32} round={true} />
-        </FacebookShareButton>
-        <LinkedinShareButton url={window.location.href}>
-          <LinkedinIcon size={32} round={true} />
-        </LinkedinShareButton>
-        <RedditShareButton url={window.location.href}>
-          <RedditIcon size={32} round={true} />
-        </RedditShareButton>
-        <TelegramShareButton url={window.location.href}>
-          <TelegramIcon size={32} round={true} />
-        </TelegramShareButton>
-        <WhatsappShareButton url={window.location.href}>
-          <WhatsappIcon size={32} round={true} />
-        </WhatsappShareButton>
-        <EmailShareButton url={window.location.href}>
-          <EmailIcon size={32} round={true} />
-        </EmailShareButton>
-      </div>
+        <aside>
+          <Row className={LayoutChapterStyles.readMore}>
+            {previousPage && (
+              <Col xs={12} md={nextPage ? 6 : 12}>
+                <>
+                  Previous article:
+                  <div>
+                    <a href={previousPage.url}>{previousPage.title}</a>
+                  </div>
+                </>
+              </Col>
+            )}
+            {nextPage && (
+              <Col
+                xs={12}
+                md={previousPage ? 6 : 12}
+                className={LayoutChapterStyles.rightCol}
+              >
+                <>
+                  Next article:
+                  <div>
+                    <a href={nextPage.url}>{nextPage.title}</a>
+                  </div>
+                </>
+              </Col>
+            )}
+          </Row>
 
-      {mdx.frontmatter.references && (
-        <div className={LayoutChapterStyles.references}>
-          <div id="references" className={LayoutChapterStyles.referenceTitle}>
-            References:
+          <div className={LayoutChapterStyles.shareButtonContainer}>
+            <div className={LayoutChapterStyles.shareButtonContainerHeader}>
+              Share in social media:
+            </div>
+            <TwitterShareButton url={windows.location.href}>
+              <TwitterIcon size={32} round={true} />
+            </TwitterShareButton>
+            <FacebookShareButton url={windows.location.href}>
+              <FacebookIcon size={32} round={true} />
+            </FacebookShareButton>
+            <LinkedinShareButton url={windows.location.href}>
+              <LinkedinIcon size={32} round={true} />
+            </LinkedinShareButton>
+            <RedditShareButton url={windows.location.href}>
+              <RedditIcon size={32} round={true} />
+            </RedditShareButton>
+            <TelegramShareButton url={windows.location.href}>
+              <TelegramIcon size={32} round={true} />
+            </TelegramShareButton>
+            <WhatsappShareButton url={windows.location.href}>
+              <WhatsappIcon size={32} round={true} />
+            </WhatsappShareButton>
+            <EmailShareButton url={windows.location.href}>
+              <EmailIcon size={32} round={true} />
+            </EmailShareButton>
           </div>
-          <ol>
-            {mdx.frontmatter.references.map((reference: any) => {
-              return (
-                <li key={"reflink-" + reference.href}>
-                  <RefLink href={reference.href}>{reference.text}</RefLink>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      )}
+
+          {mdx.frontmatter.references && (
+            <div className={LayoutChapterStyles.references}>
+              <div
+                id="references"
+                className={LayoutChapterStyles.referenceTitle}
+              >
+                References:
+              </div>
+              <ol>
+                {mdx.frontmatter.references.map((reference: any) => {
+                  return (
+                    <li key={"reflink-" + reference.href}>
+                      <RefLink href={reference.href}>{reference.text}</RefLink>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          )}
+        </aside>
+      </article>
     </Layout>
   );
 }
