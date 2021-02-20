@@ -53,6 +53,7 @@ export default function PageTemplate(props: PageTemplateProps) {
   const { mdx, site } = data;
   const previousPage = getPageData(pageContext.previous);
   const nextPage = getPageData(pageContext.next);
+  const location = typeof window === "object" ? window.location.href : "";
 
   return (
     <Layout>
@@ -116,25 +117,25 @@ export default function PageTemplate(props: PageTemplateProps) {
             <div className={LayoutChapterStyles.shareButtonContainerHeader}>
               Share in social media:
             </div>
-            <TwitterShareButton url={windows.location.href}>
+            <TwitterShareButton url={location}>
               <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
-            <FacebookShareButton url={windows.location.href}>
+            <FacebookShareButton url={location}>
               <FacebookIcon size={32} round={true} />
             </FacebookShareButton>
-            <LinkedinShareButton url={windows.location.href}>
+            <LinkedinShareButton url={location}>
               <LinkedinIcon size={32} round={true} />
             </LinkedinShareButton>
-            <RedditShareButton url={windows.location.href}>
+            <RedditShareButton url={location}>
               <RedditIcon size={32} round={true} />
             </RedditShareButton>
-            <TelegramShareButton url={windows.location.href}>
+            <TelegramShareButton url={location}>
               <TelegramIcon size={32} round={true} />
             </TelegramShareButton>
-            <WhatsappShareButton url={windows.location.href}>
+            <WhatsappShareButton url={location}>
               <WhatsappIcon size={32} round={true} />
             </WhatsappShareButton>
-            <EmailShareButton url={windows.location.href}>
+            <EmailShareButton url={location}>
               <EmailIcon size={32} round={true} />
             </EmailShareButton>
           </div>
