@@ -65,30 +65,33 @@ export default function PageTemplate(props: PageTemplateProps) {
           <a href="/book">Design Technologist Handbook</a>
         </Col>
       </Row>
-
       <MDXRenderer>{mdx.body}</MDXRenderer>
 
       <Row className={LayoutChapterStyles.readMore}>
-        <Col xs={12} md={6}>
-          {previousPage && (
+        {previousPage && (
+          <Col xs={12} md={nextPage ? 6 : 12}>
             <>
               Previous article:
               <div>
                 <a href={previousPage.url}>{previousPage.title}</a>
               </div>
             </>
-          )}
-        </Col>
-        <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
-          {nextPage && (
+          </Col>
+        )}
+        {nextPage && (
+          <Col
+            xs={12}
+            md={previousPage ? 6 : 12}
+            className={LayoutChapterStyles.rightCol}
+          >
             <>
               Next article:
               <div>
                 <a href={nextPage.url}>{nextPage.title}</a>
               </div>
             </>
-          )}
-        </Col>
+          </Col>
+        )}
       </Row>
       {mdx.frontmatter.references && (
         <div className={LayoutChapterStyles.references}>
