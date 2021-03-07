@@ -117,7 +117,7 @@ module.exports = {
     title: `Design Technologist Club`,
     description: ``,
     commentsApiUrl:
-      "http://comments.designtechnologist.club/v3/entry/github/nettiopsu/designtechnologist/master/comments"
+      "https://comments.designtechnologist.club/v3/entry/github/nettiopsu/designtechnologist/master/comments"
   },
   plugins
 };
