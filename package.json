@@ -31,6 +31,7 @@
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.3.13",
+    "gatsby-transformer-yaml": "^3.0.0",
     "preact": "^10.5.5",
     "preact-render-to-string": "^5.1.11",
     "prop-types": "^15.7.2",

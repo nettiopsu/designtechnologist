@@ -61,7 +61,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         id: node.id,
         previous: index === 0 ? null : chapters[index - 1].node,
-        next: index === chapters.length - 1 ? null : chapters[index + 1].node
+        next: index === chapters.length - 1 ? null : chapters[index + 1].node,
+        currentSlug: node.fields.slug
       }
     });
   });

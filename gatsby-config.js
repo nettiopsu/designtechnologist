@@ -88,6 +88,19 @@ const plugins = [
       timeout: 3500
     }
   },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `comments`,
+      path: `${__dirname}/comments`
+    }
+  },
+  {
+    resolve: `gatsby-transformer-yaml`,
+    options: {
+      typeName: `Yaml` // a fixed string
+    }
+  },
   "gatsby-plugin-preload-fonts"
 
   // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -102,7 +115,9 @@ if (process.env.NODE_ENV === "production") {
 module.exports = {
   siteMetadata: {
     title: `Design Technologist Club`,
-    description: ``
+    description: ``,
+    commentsApiUrl:
+      "http://comments.designtechnologist.club/v3/entry/github/nettiopsu/designtechnologist/master/comments"
   },
   plugins
 };

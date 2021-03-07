@@ -27,6 +27,7 @@ export interface SiteProps {
   meta: [];
   title?: string;
   mainTitle?: string;
+  commentsApiUrl?: string;
 }
 
 interface Props {
