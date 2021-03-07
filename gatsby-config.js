@@ -119,5 +119,11 @@ module.exports = {
     commentsApiUrl:
       "https://comments.designtechnologist.club/v3/entry/github/nettiopsu/designtechnologist/master/comments"
   },
+  flags: {
+    FAST_DEV: true,
+    QUERY_ON_DEMAND: true,
+    LAZY_IMAGES: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true
+  },
   plugins
 };
