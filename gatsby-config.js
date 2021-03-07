@@ -121,8 +121,6 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    QUERY_ON_DEMAND: true,
-    LAZY_IMAGES: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins
