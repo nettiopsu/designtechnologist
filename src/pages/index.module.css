@@ -1,4 +1,4 @@
-.hero {
+.indexHero {
   width: 100%;
   overflow: hidden;
   margin: 0;
@@ -6,7 +6,7 @@
   position: relative;
   margin-bottom: 80px;
 }
-.hero img {
+.indexHero img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -14,15 +14,15 @@
   transform: translate(-50%, -50%);
 }
 
-.flexContainer {
+.indexFlexContainer {
   display: "flex";
 }
 
-.flexItem {
+.indexFlexItem {
   flex: "1";
 }
 
-.left {
+.indexLeft {
   font-family: "Roboto";
   font-size: 1rem;
   background-color: #f9f9fa;
@@ -31,25 +31,25 @@
   margin-bottom: 64px;
 }
 
-.left,
-.right {
+.indexLeft,
+.indexRight {
   padding: calc(8px + 3.5vw) calc(8px + 2.5vw);
 }
 
-.title {
+.indexTitle {
   text-align: left;
   font-size: calc(2rem + 4vw);
   margin-bottom: calc(2rem + 3vw);
 }
 
 @media only screen and (min-width: 1280px) {
-  .title {
+  .indexTitle {
     font-size: 5rem;
     margin-bottom: 80px;
   }
 
-  .left,
-  .right {
+  .indexLeft,
+  .indexRight {
     padding: 56px 40px;
   }
 }

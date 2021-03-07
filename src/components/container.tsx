@@ -1,6 +1,9 @@
 import React from "react";
-
-import ContainerStyles from "./container.module.css";
+import {
+  container,
+  containerNarrow,
+  containerWide
+} from "./container.module.css";
 
 interface Props {
   children: any;
@@ -9,13 +12,7 @@ interface Props {
 
 const Container = ({ children, wide }: Props) => {
   return (
-    <div
-      className={
-        ContainerStyles.container +
-        " " +
-        (wide ? ContainerStyles.containerWide : ContainerStyles.containerNarrow)
-      }
-    >
+    <div className={container + " " + (wide ? containerWide : containerNarrow)}>
       {children}
     </div>
   );

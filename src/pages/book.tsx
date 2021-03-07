@@ -1,10 +1,9 @@
+import { graphql } from "gatsby";
 import React from "react";
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { graphql } from "gatsby";
 import mainPic from "../images/book.svg";
-import HandbookStyles from "./book.module.css";
+import { bookHero } from "./book.module.css";
 
 interface Edge {
   node: {
@@ -35,7 +34,7 @@ const BookPage = ({
   return (
     <Layout>
       <SEO title="Handbook" />
-      <figure className={HandbookStyles.hero}>
+      <figure className={bookHero}>
         <img src={mainPic} alt="" />
       </figure>
       <h1>Design Technologist Handbook</h1>

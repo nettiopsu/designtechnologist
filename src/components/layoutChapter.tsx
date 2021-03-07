@@ -2,12 +2,6 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import React, { useState } from "react";
 import { Col, Row } from "react-flexbox-grid";
-import Layout from "./layout";
-import LayoutChapterStyles from "./layoutChapter.module.css";
-import CommonStyles from "../css/common.module.css";
-import SEO from "./seo";
-import { SiteProps } from "../pages";
-import RefLink from "./reflink";
 import {
   EmailIcon,
   EmailShareButton,
@@ -24,6 +18,23 @@ import {
   WhatsappIcon,
   WhatsappShareButton
 } from "react-share";
+import { commonForm, commonButton } from "../css/common.module.css";
+import { SiteProps } from "../pages";
+import Layout from "./layout";
+import {
+  layoutChapterComment,
+  layoutChapterCommentContainer,
+  layoutChapterCommentName,
+  layoutChapterCommentsContainer,
+  layoutChapterHero,
+  layoutChapterHoneyPot,
+  layoutChapterReadMore,
+  layoutChapterShareButtonContainer,
+  layoutChapterSmallText,
+  layoutChapterSubheader
+} from "./layoutChapter.module.css";
+import RefLink from "./reflink";
+import SEO from "./seo";
 
 interface PageTemplateProps {
   data: {
@@ -134,7 +145,7 @@ export default function PageTemplate(props: PageTemplateProps) {
       />
       <article>
         <figure
-          className={LayoutChapterStyles.hero}
+          className={layoutChapterHero}
           style={{
             paddingTop: mdx.frontmatter.aspectRatio
               ? mdx.frontmatter.aspectRatio * 100 + "%"
@@ -145,22 +156,22 @@ export default function PageTemplate(props: PageTemplateProps) {
         </figure>
         <h1>{mdx.frontmatter.title}</h1>
 
-        <Row className={LayoutChapterStyles.readMore}>
+        <Row className={layoutChapterReadMore}>
           <Col xs={12} md={6}>
             Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
           </Col>
-          <Col xs={12} md={6} className={LayoutChapterStyles.rightCol}>
+          <Col xs={12} md={6}>
             <a href="/book">Design Technologist Handbook</a>
           </Col>
         </Row>
         <MDXRenderer>{mdx.body}</MDXRenderer>
 
         <aside>
-          <Row className={LayoutChapterStyles.readMore}>
+          <Row className={layoutChapterReadMore}>
             {previousPage && (
               <Col xs={12} md={nextPage ? 6 : 12}>
                 <>
-                  <div className={LayoutChapterStyles.subheader}>
+                  <div className={layoutChapterSubheader}>
                     Previous article:
                   </div>
                   <div>
@@ -170,15 +181,9 @@ export default function PageTemplate(props: PageTemplateProps) {
               </Col>
             )}
             {nextPage && (
-              <Col
-                xs={12}
-                md={previousPage ? 6 : 12}
-                className={LayoutChapterStyles.rightCol}
-              >
+              <Col xs={12} md={previousPage ? 6 : 12}>
                 <>
-                  <div className={LayoutChapterStyles.subheader}>
-                    Next article:
-                  </div>
+                  <div className={layoutChapterSubheader}>Next article:</div>
                   <div>
                     <a href={nextPage.url}>{nextPage.title}</a>
                   </div>
@@ -187,10 +192,8 @@ export default function PageTemplate(props: PageTemplateProps) {
             )}
           </Row>
 
-          <div className={LayoutChapterStyles.shareButtonContainer}>
-            <div className={LayoutChapterStyles.subheader}>
-              Share in social media:
-            </div>
+          <div className={layoutChapterShareButtonContainer}>
+            <div className={layoutChapterSubheader}>Share in social media:</div>
             <TwitterShareButton url={location}>
               <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
@@ -214,24 +217,24 @@ export default function PageTemplate(props: PageTemplateProps) {
             </EmailShareButton>
           </div>
 
-          <div className={LayoutChapterStyles.commentsContainer}>
+          <div className={layoutChapterCommentsContainer}>
             <form
               method="POST"
-              className={CommonStyles.form}
+              className={commonForm}
               action={site.siteMetadata.commentsApiUrl}
               onSubmit={event => onCommentSubmit(event)}
             >
-              <div className={LayoutChapterStyles.commentContainer}>
-                <div className={LayoutChapterStyles.subheader}>Comments:</div>
+              <div className={layoutChapterCommentContainer}>
+                <div className={layoutChapterSubheader}>Comments:</div>
 
                 {comments.map((comment, offset) => {
                   const date = new Date(comment.node.date * 1000);
                   return (
                     <div
-                      className={LayoutChapterStyles.comment}
+                      className={layoutChapterComment}
                       key={"comment-" + offset}
                     >
-                      <div className={LayoutChapterStyles.commentName}>
+                      <div className={layoutChapterCommentName}>
                         <b>{comment.node.name}</b> ({date.toLocaleDateString()}{" "}
                         {date.toLocaleTimeString()})
                       </div>
@@ -276,22 +279,19 @@ export default function PageTemplate(props: PageTemplateProps) {
                   </div>
                 </div>
               )}
-              <div aria-hidden={true} className={LayoutChapterStyles.honeyPot}>
+              <div aria-hidden={true} className={layoutChapterHoneyPot}>
                 <input
                   name="fields[bee-attraction]"
                   type="text"
                   id="comment-field-name"
                 />
               </div>
-              <div className={LayoutChapterStyles.smallText + " mb-4"}>
+              <div className={layoutChapterSmallText + " mb-4"}>
                 Comments are moderated and appear as soon as they have been
                 approved
               </div>
               {commentSubmitResultMessage && (
-                <div
-                  role="alert"
-                  className={LayoutChapterStyles.smallText + " mb-4"}
-                >
+                <div role="alert" className={layoutChapterSmallText + " mb-4"}>
                   {commentSubmitResultMessage}
                 </div>
               )}
@@ -299,7 +299,7 @@ export default function PageTemplate(props: PageTemplateProps) {
               {!commentWasSent && (
                 <button
                   type="submit"
-                  className={CommonStyles.button}
+                  className={commonButton}
                   disabled={commentSubmitIsBlocked}
                 >
                   Send
@@ -309,8 +309,8 @@ export default function PageTemplate(props: PageTemplateProps) {
           </div>
 
           {mdx.frontmatter.references && (
-            <div className={LayoutChapterStyles.smallText}>
-              <div id="references" className={LayoutChapterStyles.subheader}>
+            <div className={layoutChapterSmallText}>
+              <div id="references" className={layoutChapterSubheader}>
                 References:
               </div>
               <ol>

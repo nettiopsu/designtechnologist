@@ -1,14 +1,4 @@
-.upperContainer {
-  font-size: 16px;
-  margin-bottom: 64px;
-  font-family: Roboto, sans-serif;
-  font-weight: bold;
-  text-align: right;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.readMore {
+.layoutChapterReadMore {
   font-size: 16px;
   font-family: Roboto, sans-serif;
   font-weight: bold;
@@ -16,11 +6,11 @@
   margin-bottom: 32px;
 }
 
-.readMore > div {
+.layoutChapterReadMore > div {
   margin-bottom: 16px;
 }
 
-.hero {
+.layoutChapterHero {
   width: 100%;
   overflow: hidden;
   margin: 0;
@@ -28,7 +18,7 @@
   position: relative;
   margin-bottom: 80px;
 }
-.hero img {
+.layoutChapterHero img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -36,32 +26,32 @@
   transform: translate(-50%, -50%);
 }
 
-.smallText {
+.layoutChapterSmallText {
   font-size: 14px;
   font-family: Roboto, sans-serif;
 }
 
-.shareButtonContainer {
+.layoutChapterShareButtonContainer {
   margin-bottom: 32px;
 }
 
-.shareButtonContainer button {
+.layoutChapterShareButtonContainer button {
   margin-right: 16px;
   margin-bottom: 16px;
 }
 
-.shareButtonContainer svg {
+.layoutChapterShareButtonContainer svg {
   vertical-align: middle;
 }
 
-.subheader {
+.layoutChapterSubheader {
   font-size: 18px;
   font-family: Roboto, sans-serif;
   font-weight: bold;
   margin-bottom: 16px;
 }
 
-.honeyPot {
+.layoutChapterHoneyPot {
   opacity: 0;
   position: absolute;
   top: 0;
@@ -71,21 +61,21 @@
   z-index: -1;
 }
 
-.commentsContainer {
+.layoutChapterCommentsContainer {
   margin-bottom: 48px;
 }
 
-.commentContainer {
+.layoutChapterCommentContainer {
   margin-bottom: 32px;
 }
 
-.comment {
+.layoutChapterComment {
   border-radius: 16px;
   background: radial-gradient(circle, #dddee9 0%, #ededf0 100%);
   padding: 16px;
   margin-bottom: 32px;
 }
 
-.commentName {
+.layoutChapterCommentName {
   margin-bottom: 16px;
 }

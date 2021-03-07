@@ -1,10 +1,9 @@
 import React from "react";
-
-import CommonStyles from "../css/common.module.css";
+import { commonSignature } from "../css/common.module.css";
 
 const Signature = () => {
   return (
-    <div className={CommonStyles.signature}>
+    <div className={commonSignature}>
       --
       <div>Sincerely yours,</div>
       <div>Konstantin</div>

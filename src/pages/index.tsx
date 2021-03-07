@@ -1,12 +1,16 @@
-import React, { Fragment } from "react";
-
+import { graphql } from "gatsby";
+import React from "react";
+import { Col, Row } from "react-flexbox-grid";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { graphql } from "gatsby";
-import mainPic from "../images/designtechnologist.svg";
-import IndexStyles from "./index.module.css";
-import { Row, Col } from "react-flexbox-grid";
 import Signature from "../components/signature";
+import mainPic from "../images/designtechnologist.svg";
+import {
+  indexHero,
+  indexLeft,
+  indexRight,
+  indexTitle
+} from "./index.module.css";
 
 interface Edge {
   node: {
@@ -49,10 +53,10 @@ const IndexPage = ({
   return (
     <Layout wide={true}>
       <SEO />
-      <h1 className={IndexStyles.title}>Design Technologist Club</h1>
+      <h1 className={indexTitle}>Design Technologist Club</h1>
       <Row>
         <Col xs={12} lg={4}>
-          <div className={IndexStyles.left}>
+          <div className={indexLeft}>
             <p>
               <b>Not a pure developer, but neither a designer.</b>
             </p>
@@ -88,8 +92,8 @@ const IndexPage = ({
           </div>
         </Col>
         <Col xs={12} lg={8}>
-          <div className={IndexStyles.right}>
-            <figure className={IndexStyles.hero}>
+          <div className={indexRight}>
+            <figure className={indexHero}>
               <img src={mainPic} alt="" />
             </figure>
             <h2>Handbook</h2>

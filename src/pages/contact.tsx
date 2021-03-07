@@ -1,23 +1,22 @@
 import React from "react";
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import "./contact.css";
-import ContactStyles from "./contact.module.css";
-import CommonStyles from "../css/common.module.css";
 import Signature from "../components/signature";
+import { commonButton, commonForm } from "../css/common.module.css";
+import "./contact.css";
+import { contactIntro } from "./contact.module.css";
 
 const ContactPage = () => {
   return (
     <Layout>
       <SEO title="Contacts" />
       <h1>Contacts</h1>
-      <div className={ContactStyles.intro}>
+      <div className={contactIntro}>
         Feel free to contact me on any matters related to the Design
         Technologist Handbook and Design Technologist world in general. Any
         comments are welcome!
       </div>
-      <div className={ContactStyles.intro}>
+      <div className={contactIntro}>
         <Signature />
       </div>
       <form
@@ -25,7 +24,7 @@ const ContactPage = () => {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        className={CommonStyles.form}
+        className={commonForm}
       >
         <input type="hidden" name="bot-field" />{" "}
         <input type="hidden" name="form-name" value="contact" />
@@ -59,7 +58,7 @@ const ContactPage = () => {
           <div data-netlify-recaptcha="true"></div>
         </div>
         <div className="flex items-center justify-end">
-          <button className={CommonStyles.button} type="submit">
+          <button className={commonButton} type="submit">
             Send
           </button>
         </div>

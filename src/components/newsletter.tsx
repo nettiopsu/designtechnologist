@@ -1,7 +1,13 @@
-import React, { FormEvent, useRef, useState } from "react";
-import NewsletterStyles from "./newsletter.module.css";
-import CommonStyles from "../css/common.module.css";
 import addToMailchimp from "gatsby-plugin-mailchimp";
+import React, { FormEvent, useRef, useState } from "react";
+import { commonButton, commonForm } from "../css/common.module.css";
+import {
+  newsletterContainer,
+  newsletterDot,
+  newsletterFieldsContainer,
+  newsletterHeader,
+  newsletterText
+} from "./newsletter.module.css";
 
 const Newsletter = () => {
   const email = useRef<HTMLInputElement | null>(null);
@@ -27,16 +33,16 @@ const Newsletter = () => {
   };
 
   return (
-    <div className={NewsletterStyles.container}>
-      <form onSubmit={e => handleSubmit(e)} className={CommonStyles.form}>
+    <div className={newsletterContainer}>
+      <form onSubmit={e => handleSubmit(e)} className={commonForm}>
         <div>
           <div>
             <div>
-              <div className={NewsletterStyles.header}>
-                <div className={NewsletterStyles.dot} /> Design Technologist
-                Club Newsletter
+              <div className={newsletterHeader}>
+                <div className={newsletterDot} /> Design Technologist Club
+                Newsletter
               </div>
-              <div className={NewsletterStyles.text}>
+              <div className={newsletterText}>
                 Join Design Technologist Club and receive technology news,
                 manuals, tips and tricks
               </div>
@@ -46,7 +52,7 @@ const Newsletter = () => {
                   <div>
                     <div
                       className={
-                        "flex items-center " + NewsletterStyles.fieldsContainer
+                        "flex items-center " + newsletterFieldsContainer
                       }
                     >
                       <input
@@ -57,7 +63,7 @@ const Newsletter = () => {
                         aria-label="E-mail"
                         className="flex-1 appearance-none border rounded mr-3 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                       />
-                      <button type="submit" className={CommonStyles.button}>
+                      <button type="submit" className={commonButton}>
                         Subscribe
                       </button>
                     </div>
@@ -66,7 +72,7 @@ const Newsletter = () => {
                 {message && (
                   <div
                     id="newsletter-alert"
-                    className={NewsletterStyles.text}
+                    className={newsletterText}
                     role="alert"
                   >
                     {message}

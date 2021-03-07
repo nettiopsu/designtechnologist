@@ -1,9 +1,9 @@
-.root {
+.headerRoot {
   background: #233d4d;
   margin-bottom: 64px;
 }
 
-.container {
+.headerContainer {
   min-height: 64px;
   display: flex;
   align-items: center;
@@ -11,29 +11,29 @@
   flex-wrap: wrap;
 }
 
-.container a {
+.headerContainer a {
   color: white;
   font-size: 14px;
   font-family: Roboto, sans-serif;
   text-decoration: none;
 }
 
-.container a:hover {
+.headerContainer a:hover {
   text-decoration: underline;
 }
 
-.left {
+.headerLeft {
   flex-basis: 255px;
 }
 
-.logo {
+.headerLogo {
   display: block;
   width: 280px;
   height: 64px;
   margin-left: -8px;
 }
 
-.icon {
+.headerIcon {
   height: 16px;
   width: 16px;
   display: inline-block;
@@ -41,20 +41,20 @@
   margin-right: 8px;
 }
 
-.iconLink {
+.headerIconLink {
   vertical-align: middle;
   display: inline-block;
   margin-right: 16px;
   padding: 16px 0;
 }
 
-.mobileMenuIcon {
+.headerMobileMenuIcon {
   height: 32px;
   width: 32px;
   vertical-align: middle;
 }
 
-.mobileMenuButton {
+.headerMobileMenuButton {
   padding: 0;
   appearance: none;
   border: none;
@@ -62,13 +62,13 @@
 }
 
 @media only screen and (min-width: 790px) {
-  .mobileMenuContainer {
+  .headerMobileMenuContainer {
     display: none;
   }
 }
 
 @media only screen and (max-width: 789px) {
-  .right {
+  .headerRight {
     display: none;
   }
 }

@@ -1,4 +1,4 @@
-.hero {
+.bookHero {
   width: 100%;
   overflow: hidden;
   margin: 0;
@@ -6,7 +6,7 @@
   position: relative;
   margin-bottom: 80px;
 }
-.hero img {
+.bookHero img {
   position: absolute;
   top: 50%;
   left: 50%;
