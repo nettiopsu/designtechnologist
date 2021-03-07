@@ -1,6 +1,6 @@
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-flexbox-grid";
 import Layout from "./layout";
 import LayoutChapterStyles from "./layoutChapter.module.css";
@@ -63,6 +63,11 @@ export default function PageTemplate(props: PageTemplateProps) {
   const previousPage = getPageData(pageContext.previous);
   const nextPage = getPageData(pageContext.next);
   const location = typeof window === "object" ? window.location.href : "";
+  const [commentSubmitResultMessage, setCommentSubmitResultMessage] = useState<
+    string
+  >();
+  const [commentSubmitIsBlocked, setCommentSubmitIsBlocked] = useState(false);
+  const [commentWasSent, setCommentWasSent] = useState(false);
 
   const comments = allYaml.edges.length
     ? allYaml.edges
@@ -76,6 +81,49 @@ export default function PageTemplate(props: PageTemplateProps) {
           }
         }
       ];
+
+  const onCommentSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setCommentSubmitResultMessage("Sending data, wait a second...");
+    setCommentSubmitIsBlocked(true);
+
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const dataParams = new URLSearchParams();
+    formData.forEach((value, key) => {
+      dataParams.append(key, value.toString());
+    });
+
+    const submitResult = await fetch(form.action, {
+      method: "POST",
+      body: dataParams,
+      redirect: "manual"
+    });
+
+    if (submitResult.type === "opaqueredirect") {
+      setCommentSubmitResultMessage(
+        "Thanks, your message was sent. It will appear after moderation"
+      );
+      setCommentWasSent(true);
+    } else {
+      setCommentSubmitIsBlocked(false);
+      const submitJsonResult = await submitResult.json();
+      if (submitJsonResult.errorCode === "MISSING_REQUIRED_FIELDS") {
+        const missingFields = submitJsonResult.data.join(", ");
+        setCommentSubmitResultMessage(
+          "Error. Missing fields: " + missingFields
+        );
+      } else {
+        if (submitJsonResult.error && submitJsonResult.error.text) {
+          setCommentSubmitResultMessage(submitJsonResult.error.text);
+        } else {
+          setCommentSubmitResultMessage(
+            "Unfortunately you can not send a message at the moment. We will fix it"
+          );
+        }
+      }
+    }
+  };
 
   return (
     <Layout>
@@ -171,14 +219,18 @@ export default function PageTemplate(props: PageTemplateProps) {
               method="POST"
               className={CommonStyles.form}
               action={site.siteMetadata.commentsApiUrl}
+              onSubmit={event => onCommentSubmit(event)}
             >
               <div className={LayoutChapterStyles.commentContainer}>
                 <div className={LayoutChapterStyles.subheader}>Comments:</div>
 
-                {comments.map((comment: any) => {
+                {comments.map((comment, offset) => {
                   const date = new Date(comment.node.date * 1000);
                   return (
-                    <div className={LayoutChapterStyles.comment}>
+                    <div
+                      className={LayoutChapterStyles.comment}
+                      key={"comment-" + offset}
+                    >
                       <div className={LayoutChapterStyles.commentName}>
                         <b>{comment.node.name}</b> ({date.toLocaleDateString()}{" "}
                         {date.toLocaleTimeString()})
@@ -188,38 +240,42 @@ export default function PageTemplate(props: PageTemplateProps) {
                   );
                 })}
               </div>
-              <div className="mb-4">
-                <input
-                  name="options[redirect]"
-                  type="hidden"
-                  value={location}
-                />
-                <input
-                  name="fields[slug]"
-                  type="hidden"
-                  value={pageContext.currentSlug}
-                />
-                <label
-                  htmlFor="comment-field-name"
-                  className="block font-bold mb-2"
-                >
-                  Name
-                </label>
-                <input
-                  name="fields[name]"
-                  type="text"
-                  id="comment-field-name"
-                  className="flex-1 appearance-none border rounded mr-3 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block font-bold mb-2">Message</label>
-                <textarea
-                  name="fields[message]"
-                  id="comment-field-name"
-                  className="rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline h-16"
-                ></textarea>
-              </div>
+              {!commentWasSent && (
+                <div>
+                  <div className="mb-4">
+                    <input
+                      name="options[redirect]"
+                      type="hidden"
+                      value={location}
+                    />
+                    <input
+                      name="fields[slug]"
+                      type="hidden"
+                      value={pageContext.currentSlug}
+                    />
+                    <label
+                      htmlFor="comment-field-name"
+                      className="block font-bold mb-2"
+                    >
+                      Name
+                    </label>
+                    <input
+                      name="fields[name]"
+                      type="text"
+                      id="comment-field-name"
+                      className="flex-1 appearance-none border rounded mr-3 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block font-bold mb-2">Message</label>
+                    <textarea
+                      name="fields[message]"
+                      id="comment-field-name"
+                      className="rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline h-16"
+                    ></textarea>
+                  </div>
+                </div>
+              )}
               <div aria-hidden={true} className={LayoutChapterStyles.honeyPot}>
                 <input
                   name="fields[bee-attraction]"
@@ -231,9 +287,24 @@ export default function PageTemplate(props: PageTemplateProps) {
                 Comments are moderated and appear as soon as they have been
                 approved
               </div>
-              <button type="submit" className={CommonStyles.button}>
-                Send
-              </button>
+              {commentSubmitResultMessage && (
+                <div
+                  role="alert"
+                  className={LayoutChapterStyles.smallText + " mb-4"}
+                >
+                  {commentSubmitResultMessage}
+                </div>
+              )}
+
+              {!commentWasSent && (
+                <button
+                  type="submit"
+                  className={CommonStyles.button}
+                  disabled={commentSubmitIsBlocked}
+                >
+                  Send
+                </button>
+              )}
             </form>
           </div>
 
