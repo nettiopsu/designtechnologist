@@ -65,6 +65,7 @@ const Header = () => {
               <img
                 src={mobileMenuIsOpen ? CloseIcon : MenuIcon}
                 className={headerMobileMenuIcon}
+                alt=""
               />
             </button>
           </div>
