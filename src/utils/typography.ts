@@ -2,7 +2,7 @@ import Typography from "typography";
 const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.6,
-  headerFontFamily: ["Inconsolata", "Courier"],
+  headerFontFamily: ["Inconsolata", "Arial"],
   bodyFontFamily: ["Libre Baskerville", "serif"],
   scaleRatio: 2,
   overrideStyles: () => ({
