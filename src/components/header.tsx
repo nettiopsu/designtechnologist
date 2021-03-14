@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import BookLogo from "../icons/bookmark.svg";
 import CloseIcon from "../icons/close.svg";
 import SlackLogo from "../icons/logo-slack.svg";
-import MailIcon from "../icons/mail.svg";
+import PersonIcon from "../icons/person-circle.svg";
 import MenuIcon from "../icons/menu.svg";
 import NewsletterIcon from "../icons/newspaper.svg";
 import Logo from "../images/logo.svg";
@@ -86,14 +86,14 @@ const Header = () => {
               <img src={NewsletterIcon} alt="" className={headerIcon} />
               Newsletter
             </a>
-            <a className={headerIconLink} href="/contact">
+            <a className={headerIconLink} href="/about">
               <img
-                src={MailIcon}
+                src={PersonIcon}
                 alt=""
                 className={headerIcon}
                 aria-hidden="true"
               />
-              Contacts
+              About the author
             </a>
           </nav>
         </div>

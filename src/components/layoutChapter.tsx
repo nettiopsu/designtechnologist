@@ -157,11 +157,16 @@ export default function PageTemplate(props: PageTemplateProps) {
         <h1>{mdx.frontmatter.title}</h1>
 
         <Row className={layoutChapterReadMore}>
-          <Col xs={12} md={6}>
-            Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
-          </Col>
-          <Col xs={12} md={6}>
-            <a href="/book">Design Technologist Handbook</a>
+          <Col xs={12}>
+            <div>
+              Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
+            </div>
+            <div>
+              Author: <a href="/about">Konstantin</a>
+            </div>
+            <div>
+              Chapter in <a href="/">Design Technologist Handbook</a>
+            </div>
           </Col>
         </Row>
         <MDXRenderer>{mdx.body}</MDXRenderer>

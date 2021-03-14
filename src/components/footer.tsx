@@ -14,6 +14,7 @@ const Footer = () => {
           <a href="/book">Handbook</a>
           <a href="/slack">Slack community</a>
           <a href="/newsletter">Newsletter</a>
+          <a href="/about">About the author</a>
           <a href="/contact">Contacts</a>
           <a href="/license">License</a>
         </div>
