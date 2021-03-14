@@ -70,6 +70,7 @@ const Header = () => {
             </button>
           </div>
           <nav
+            id="menu"
             className={headerRight}
             style={{ display: mobileMenuIsOpen ? "block" : undefined }}
           >
