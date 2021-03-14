@@ -21,9 +21,8 @@
 }
 
 .commonSignature {
-  font-style: italic;
-  font-family: "Libre Baskerville", "serif";
   font-size: 0.8rem;
+  font-family: Roboto, sans-serif;
 }
 
 .commonNoWrap {
