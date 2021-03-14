@@ -270,21 +270,22 @@ export default function PageTemplate(props: PageTemplateProps) {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block font-bold mb-2">Message</label>
+                    <label
+                      className="block font-bold mb-2"
+                      htmlFor="comment-field-message"
+                    >
+                      Message
+                    </label>
                     <textarea
                       name="fields[message]"
-                      id="comment-field-name"
+                      id="comment-field-message"
                       className="rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline h-16"
                     ></textarea>
                   </div>
                 </div>
               )}
               <div aria-hidden={true} className={layoutChapterHoneyPot}>
-                <input
-                  name="fields[bee-attraction]"
-                  type="text"
-                  id="comment-field-name"
-                />
+                <input name="fields[bee-attraction]" type="text" />
               </div>
               <div className={layoutChapterSmallText + " mb-4"}>
                 Comments are moderated and appear as soon as they have been
