@@ -323,7 +323,18 @@ export default function PageTemplate(props: PageTemplateProps) {
                 {mdx.frontmatter.references.map((reference: any) => {
                   return (
                     <li key={"reflink-" + reference.href}>
-                      <RefLink href={reference.href}>{reference.text}</RefLink>
+                      {reference.accessDate ? (
+                        reference.text +
+                        " (" +
+                        reference.href +
+                        ") [Accessed " +
+                        reference.accessDate +
+                        "]"
+                      ) : (
+                        <RefLink href={reference.href}>
+                          {reference.text}
+                        </RefLink>
+                      )}
                     </li>
                   );
                 })}
@@ -357,6 +368,7 @@ export const pageQuery = graphql`
         references {
           text
           href
+          accessDate
         }
       }
       fields {
