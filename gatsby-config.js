@@ -120,7 +120,9 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: true,
+    LMDB_STORE: true
   },
   plugins
 };
