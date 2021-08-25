@@ -1,11 +1,15 @@
+.indexMain > div {
+  margin-bottom: calc(32px + 3vw);
+}
+
 .indexHero {
   width: 100%;
   overflow: hidden;
   margin: 0;
   padding-top: 59.565385%;
   position: relative;
-  margin-bottom: 80px;
 }
+
 .indexHero img {
   position: absolute;
   top: 50%;
@@ -22,18 +26,20 @@
   flex: "1";
 }
 
-.indexRight {
+.indexIntro {
   font-family: "Roboto";
   font-size: 1rem;
-  background-color: #f9f9fa;
-  padding: 56px 40px;
   border-radius: 15px;
-  margin-bottom: 64px;
+  background-color: #f9f9fa;
+  padding: calc(8px + 2.5vw);
 }
 
-.indexLeft,
-.indexRight {
-  padding: calc(8px + 3.5vw) calc(8px + 2.5vw);
+.indexIntro p:last-child {
+  margin-bottom: 0;
+}
+
+.indexText {
+  padding: 0 calc(8px + 2.5vw);
 }
 
 .indexTitle {
@@ -42,14 +48,16 @@
   margin-bottom: calc(2rem + 3vw);
 }
 
+.indexAlignRight {
+  text-align: right;
+}
+
 @media only screen and (min-width: 1280px) {
   .indexTitle {
     font-size: 5rem;
     margin-bottom: 80px;
   }
-
-  .indexLeft,
-  .indexRight {
-    padding: 56px 40px;
+  .indexMain > div {
+    margin-bottom: 80px;
   }
 }

@@ -3,12 +3,12 @@ import React from "react";
 import { Col, Row } from "react-flexbox-grid";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Signature from "../components/signature";
 import mainPic from "../images/designtechnologist.svg";
 import {
   indexHero,
-  indexLeft,
-  indexRight,
+  indexIntro,
+  indexMain,
+  indexText,
   indexTitle
 } from "./index.module.css";
 
@@ -54,12 +54,63 @@ const IndexPage = ({
     <Layout wide={true}>
       <SEO />
       <h1 className={indexTitle}>Design Technologist Club</h1>
-      <Row>
-        <Col xs={12} lg={8}>
-          <div className={indexLeft}>
+      <Row middle={"xs"} className={indexMain}>
+        <Col xs={12} lg={6}>
+          <div className={indexText}>
             <figure className={indexHero}>
               <img src={mainPic} alt="" />
             </figure>
+          </div>
+        </Col>
+        <Col xs={12} lg={6}>
+          <div className={indexIntro}>
+            <p>
+              <b>Not a pure developer, but neither a designer.</b>
+            </p>
+            <p>
+              <b>You exist in a gray zone.</b> You know how to develop, you have
+              an eye for UX and design, technology is just a tool for you to
+              satisfy user needs...
+            </p>
+            <p>
+              Sounds familiar? <b>You might be a Design Technologist.</b>
+            </p>
+            <p>
+              Join our club of like-minded people in <a href="/slack">Slack</a>{" "}
+              and check the <a href="/book">handbook</a>
+            </p>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} lg={6}>
+          <div className={indexText}>
+            <h2>Slack community</h2>
+            <p>
+              The Design Technologist Slack community is a free space for
+              everyone who work in or have an interest in everything between
+              design and coding. It is the place to go meet like-minded people,
+              share information, find out what is going on going on.
+            </p>
+            <p>
+              <a href="https://join.slack.com/t/designtechnologists/shared_invite/enQtOTU2MTc4OTE5NDI3LTUzYzZhM2Y0NDEwODgzZWNjNTAxYzVjM2EyNTI4ODIyYjFmZTg1YTRmOTdiNmQ0MDNkZGFhMTFiOGUxNDc5NmM">
+                Join our Slack community
+              </a>
+            </p>
+            <h2>Newsletter</h2>
+            <p>
+              Stay tuned! Sign up here to get the latest Design Technologist
+              news about coding, development, and everything in-between
+              delivered to your inbox. Just enter your details in the form
+              below, and you're all set.
+            </p>
+            <p>
+              <a href="/newsletter">Subscribe to the newsletter</a>
+            </p>
+          </div>
+        </Col>
+        <Col xs={12} lg={6}>
+          <div className={indexText}>
             <h2>Handbook</h2>
             <ol>
               {edges.map(edge => {
@@ -73,37 +124,6 @@ const IndexPage = ({
                 );
               })}
             </ol>
-          </div>
-        </Col>
-        <Col xs={12} lg={4}>
-          <div className={indexRight}>
-            <p>
-              <b>Not a pure developer, but neither a designer.</b>
-            </p>
-            <p>
-              <b>You exist in a gray zone.</b> You know how to develop, you have
-              an eye for UX and design, technology is just a tool for you to
-              satisfy user needs...
-            </p>
-            <p>
-              Sounds familiar? <b>You might be a Design Technologist.</b>
-            </p>
-            <p>Join our club of like-minded people and check the handbook:</p>
-            <ul>
-              <li>
-                <a href="/book">Design Technologist Handbook</a>
-              </li>
-              <li>
-                <a href="/slack">Join the Slack community</a>
-              </li>
-              <li>
-                <a href="/newsletter">Subscribe to the newsletter</a>
-              </li>
-              <li>
-                <a href="/about">About the author</a>
-              </li>
-            </ul>
-            <Signature />
           </div>
         </Col>
       </Row>
