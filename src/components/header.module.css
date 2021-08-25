@@ -1,5 +1,5 @@
 .headerRoot {
-  background: #233d4d;
+  background: radial-gradient(circle, #004e6d 0%, #233d4d 100%);
   margin-bottom: 64px;
 }
 
