@@ -18,16 +18,10 @@ import {
   WhatsappIcon,
   WhatsappShareButton
 } from "react-share";
-import { commonForm, commonButton } from "../css/common.module.css";
 import { SiteProps } from "../pages";
 import Layout from "./layout";
 import {
-  layoutChapterComment,
-  layoutChapterCommentContainer,
-  layoutChapterCommentName,
-  layoutChapterCommentsContainer,
   layoutChapterHero,
-  layoutChapterHoneyPot,
   layoutChapterReadMore,
   layoutChapterShareButtonContainer,
   layoutChapterSmallText,
@@ -220,98 +214,6 @@ export default function PageTemplate(props: PageTemplateProps) {
             <EmailShareButton url={location}>
               <EmailIcon size={32} round={true} />
             </EmailShareButton>
-          </div>
-
-          <div className={layoutChapterCommentsContainer}>
-            <form
-              method="POST"
-              className={commonForm}
-              action={site.siteMetadata.commentsApiUrl}
-              onSubmit={event => onCommentSubmit(event)}
-            >
-              <div className={layoutChapterCommentContainer}>
-                <div className={layoutChapterSubheader}>Comments:</div>
-
-                {comments.map((comment, offset) => {
-                  const date = new Date(comment.node.date * 1000);
-                  return (
-                    <div
-                      className={layoutChapterComment}
-                      key={"comment-" + offset}
-                    >
-                      <div className={layoutChapterCommentName}>
-                        <b>{comment.node.name}</b> ({date.toLocaleDateString()}{" "}
-                        {date.toLocaleTimeString()})
-                      </div>
-                      {comment.node.message}
-                    </div>
-                  );
-                })}
-              </div>
-              {!commentWasSent && (
-                <div>
-                  <div className="mb-4">
-                    <input
-                      name="options[redirect]"
-                      type="hidden"
-                      value={location}
-                    />
-                    <input
-                      name="fields[slug]"
-                      type="hidden"
-                      value={pageContext.currentSlug}
-                    />
-                    <label
-                      htmlFor="comment-field-name"
-                      className="block font-bold mb-2"
-                    >
-                      Name
-                    </label>
-                    <input
-                      name="fields[name]"
-                      type="text"
-                      id="comment-field-name"
-                      className="flex-1 appearance-none border rounded mr-3 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label
-                      className="block font-bold mb-2"
-                      htmlFor="comment-field-message"
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      name="fields[message]"
-                      id="comment-field-message"
-                      className="rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline h-16"
-                    ></textarea>
-                  </div>
-                </div>
-              )}
-              <div aria-hidden={true} className={layoutChapterHoneyPot}>
-                <input name="fields[bee-attraction]" type="text" />
-              </div>
-              <div className={layoutChapterSmallText + " mb-4"}>
-                Comments are moderated and appear as soon as they have been
-                approved
-              </div>
-              {commentSubmitResultMessage && (
-                <div role="alert" className={layoutChapterSmallText + " mb-4"}>
-                  {commentSubmitResultMessage}
-                </div>
-              )}
-
-              {!commentWasSent && (
-                <button
-                  type="submit"
-                  className={commonButton}
-                  disabled={commentSubmitIsBlocked}
-                >
-                  Send
-                </button>
-              )}
-            </form>
           </div>
 
           {mdx.frontmatter.references && (
