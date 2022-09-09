@@ -24,7 +24,8 @@ const typography = new Typography({
     ol: {
       marginLeft: 0,
       listStyle: "none",
-      counterReset: "ol"
+      counterReset: "ol",
+      marginBottom: 0
     },
     "ol li": {
       counterIncrement: "ol",
@@ -33,6 +34,12 @@ const typography = new Typography({
     "ol li:before": {
       content: "counter(ol) '.'",
       marginRight: "1em"
+    },
+    "p:last-child": {
+      marginBottom: 0
+    },
+    "li:last-child": {
+      marginBottom: 0
     }
   })
 });

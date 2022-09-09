@@ -25,10 +25,12 @@ import {
   layoutChapterReadMore,
   layoutChapterShareButtonContainer,
   layoutChapterSmallText,
-  layoutChapterSubheader
+  layoutChapterSubheader,
+  layoutChapterLongRead
 } from "./layoutChapter.module.css";
 import RefLink from "./reflink";
 import SEO from "./seo";
+import { bubble } from "./layout.module.css";
 
 interface PageTemplateProps {
   data: {
@@ -137,7 +139,7 @@ export default function PageTemplate(props: PageTemplateProps) {
         description={mdx.frontmatter.description}
         mainTitle="Design Technologist Handbook"
       />
-      <article>
+      <article className={layoutChapterLongRead}>
         <figure
           className={layoutChapterHero}
           style={{
@@ -149,101 +151,104 @@ export default function PageTemplate(props: PageTemplateProps) {
           <img src={mdx.frontmatter.image.publicURL} alt="" />
         </figure>
         <h1>{mdx.frontmatter.title}</h1>
-
-        <Row className={layoutChapterReadMore}>
-          <Col xs={12}>
-            <div>
-              Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
-            </div>
-            <div>
-              Author: <a href="/about">Konstantin</a>
-            </div>
-            <div>
-              Chapter in <a href="/">Design Technologist Handbook</a>
-            </div>
-          </Col>
-        </Row>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-
-        <aside>
+        <div className={bubble}>
           <Row className={layoutChapterReadMore}>
-            {previousPage && (
-              <Col xs={12} md={nextPage ? 6 : 12}>
-                <>
-                  <div className={layoutChapterSubheader}>
-                    Previous article:
-                  </div>
-                  <div>
-                    <a href={previousPage.url}>{previousPage.title}</a>
-                  </div>
-                </>
-              </Col>
-            )}
-            {nextPage && (
-              <Col xs={12} md={previousPage ? 6 : 12}>
-                <>
-                  <div className={layoutChapterSubheader}>Next article:</div>
-                  <div>
-                    <a href={nextPage.url}>{nextPage.title}</a>
-                  </div>
-                </>
-              </Col>
-            )}
-          </Row>
-
-          <div className={layoutChapterShareButtonContainer}>
-            <div className={layoutChapterSubheader}>Share in social media:</div>
-            <TwitterShareButton url={location}>
-              <TwitterIcon size={32} round={true} />
-            </TwitterShareButton>
-            <FacebookShareButton url={location}>
-              <FacebookIcon size={32} round={true} />
-            </FacebookShareButton>
-            <LinkedinShareButton url={location}>
-              <LinkedinIcon size={32} round={true} />
-            </LinkedinShareButton>
-            <RedditShareButton url={location}>
-              <RedditIcon size={32} round={true} />
-            </RedditShareButton>
-            <TelegramShareButton url={location}>
-              <TelegramIcon size={32} round={true} />
-            </TelegramShareButton>
-            <WhatsappShareButton url={location}>
-              <WhatsappIcon size={32} round={true} />
-            </WhatsappShareButton>
-            <EmailShareButton url={location}>
-              <EmailIcon size={32} round={true} />
-            </EmailShareButton>
-          </div>
-
-          {mdx.frontmatter.references && (
-            <div className={layoutChapterSmallText}>
-              <div id="references" className={layoutChapterSubheader}>
-                References:
+            <Col xs={12}>
+              <div>
+                Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
               </div>
-              <ol>
-                {mdx.frontmatter.references.map((reference: any) => {
-                  return (
-                    <li key={"reflink-" + reference.href}>
-                      {reference.accessDate ? (
-                        reference.text +
-                        " (" +
-                        reference.href +
-                        ") [Accessed " +
-                        reference.accessDate +
-                        "]"
-                      ) : (
-                        <RefLink href={reference.href}>
-                          {reference.text}
-                        </RefLink>
-                      )}
-                    </li>
-                  );
-                })}
-              </ol>
+              <div>
+                Author: <a href="/about">Konstantin</a>
+              </div>
+              <div>
+                Chapter in <a href="/">Design Technologist Handbook</a>
+              </div>
+            </Col>
+          </Row>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+
+          <aside>
+            <Row className={layoutChapterReadMore}>
+              {previousPage && (
+                <Col xs={12} md={nextPage ? 6 : 12}>
+                  <>
+                    <div className={layoutChapterSubheader}>
+                      Previous article:
+                    </div>
+                    <div>
+                      <a href={previousPage.url}>{previousPage.title}</a>
+                    </div>
+                  </>
+                </Col>
+              )}
+              {nextPage && (
+                <Col xs={12} md={previousPage ? 6 : 12}>
+                  <>
+                    <div className={layoutChapterSubheader}>Next article:</div>
+                    <div>
+                      <a href={nextPage.url}>{nextPage.title}</a>
+                    </div>
+                  </>
+                </Col>
+              )}
+            </Row>
+
+            <div className={layoutChapterShareButtonContainer}>
+              <div className={layoutChapterSubheader}>
+                Share in social media:
+              </div>
+              <TwitterShareButton url={location}>
+                <TwitterIcon size={32} round={true} />
+              </TwitterShareButton>
+              <FacebookShareButton url={location}>
+                <FacebookIcon size={32} round={true} />
+              </FacebookShareButton>
+              <LinkedinShareButton url={location}>
+                <LinkedinIcon size={32} round={true} />
+              </LinkedinShareButton>
+              <RedditShareButton url={location}>
+                <RedditIcon size={32} round={true} />
+              </RedditShareButton>
+              <TelegramShareButton url={location}>
+                <TelegramIcon size={32} round={true} />
+              </TelegramShareButton>
+              <WhatsappShareButton url={location}>
+                <WhatsappIcon size={32} round={true} />
+              </WhatsappShareButton>
+              <EmailShareButton url={location}>
+                <EmailIcon size={32} round={true} />
+              </EmailShareButton>
             </div>
-          )}
-        </aside>
+
+            {mdx.frontmatter.references && (
+              <div className={layoutChapterSmallText}>
+                <div id="references" className={layoutChapterSubheader}>
+                  References:
+                </div>
+                <ol>
+                  {mdx.frontmatter.references.map((reference: any) => {
+                    return (
+                      <li key={"reflink-" + reference.href}>
+                        {reference.accessDate ? (
+                          reference.text +
+                          " (" +
+                          reference.href +
+                          ") [Accessed " +
+                          reference.accessDate +
+                          "]"
+                        ) : (
+                          <RefLink href={reference.href}>
+                            {reference.text}
+                          </RefLink>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            )}
+          </aside>
+        </div>
       </article>
     </Layout>
   );

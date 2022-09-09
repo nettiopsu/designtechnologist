@@ -1,12 +1,11 @@
 .newsletterContainer {
   margin: calc(2rem + 3vw) auto 32px auto;
   padding: calc(8px + 2.5vw);
-  border: 1px #ededf0 solid;
+  border: 1px #2f2f30 solid;
   font-size: 16px;
   padding-bottom: 0;
   border-radius: 10px;
-  background: #ededf0;
-  background: radial-gradient(circle, #dddee9 0%, #ededf0 100%);
+  background-color: white;
 }
 
 .newsletterHeader {
@@ -14,6 +13,9 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .newsletterText {

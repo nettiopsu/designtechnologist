@@ -35,7 +35,7 @@ function SEO(props: SiteProps) {
       }}
       title={
         title
-          ? title + " 🚀 " + (mainTitle || site.siteMetadata.title)
+          ? title + " - " + (mainTitle || site.siteMetadata.title)
           : site.siteMetadata.title
       }
       meta={[

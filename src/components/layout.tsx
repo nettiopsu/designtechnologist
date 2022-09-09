@@ -11,6 +11,7 @@ import Container from "./container";
 import Footer from "./footer";
 import Header from "./header";
 import RefLink from "./reflink";
+import "./layout.css";
 
 interface Props {
   children: any;

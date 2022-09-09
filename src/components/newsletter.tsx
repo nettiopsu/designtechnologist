@@ -39,8 +39,8 @@ const Newsletter = () => {
           <div>
             <div>
               <div className={newsletterHeader}>
-                <div className={newsletterDot} /> Design Technologist Club
-                Newsletter
+                <div className={newsletterDot} />
+                <div>Design Technologist Club Newsletter</div>
               </div>
               <div className={newsletterText}>
                 Join Design Technologist Club and receive technology news,

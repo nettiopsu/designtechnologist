@@ -1,5 +1,4 @@
 .headerRoot {
-  background: radial-gradient(circle, #004e6d 0%, #233d4d 100%);
   margin-bottom: 64px;
 }
 
@@ -12,7 +11,7 @@
 }
 
 .headerContainer a {
-  color: white;
+  color: #000;
   font-size: 14px;
   font-family: Roboto, sans-serif;
   text-decoration: none;

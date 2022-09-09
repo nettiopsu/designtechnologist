@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import mainPic from "../images/book.svg";
 import { bookHero } from "./book.module.css";
+import { bubble } from "../components/layout.module.css";
 
 interface Edge {
   node: {
@@ -38,18 +39,20 @@ const BookPage = ({
         <img src={mainPic} alt="" />
       </figure>
       <h1>Design Technologist Handbook</h1>
-      <ol>
-        {edges.map(edge => {
-          return (
-            <li key={"article-" + edge.node.fields.slug}>
-              <a href={"/" + edge.node.fields.slug}>
-                {edge.node.frontmatter.title}
-              </a>
-              {edge.node.frontmatter.appendix && " (Appendix)"}
-            </li>
-          );
-        })}
-      </ol>
+      <div className={bubble}>
+        <ol>
+          {edges.map(edge => {
+            return (
+              <li key={"article-" + edge.node.fields.slug}>
+                <a href={"/" + edge.node.fields.slug}>
+                  {edge.node.frontmatter.title}
+                </a>
+                {edge.node.frontmatter.appendix && " (Appendix)"}
+              </li>
+            );
+          })}
+        </ol>
+      </div>
     </Layout>
   );
 };
