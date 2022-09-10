@@ -72,7 +72,7 @@ const Header = () => {
           <nav
             id="menu"
             className={headerRight}
-            style={{ display: mobileMenuIsOpen ? "block" : undefined }}
+            style={{ display: mobileMenuIsOpen ? "flex" : undefined }}
           >
             <a className={headerIconLink} href="/book">
               <img src={BookLogo} alt="" className={headerIcon} />
