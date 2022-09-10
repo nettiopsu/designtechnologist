@@ -56,17 +56,13 @@ const IndexPage = ({
       <h1 className={indexTitle}>Design Technologist Club</h1>
       <Row middle={"xs"} className={indexMain}>
         <Col xs={12} lg={6}>
-          <div className={indexText}>
-            <figure className={indexHero}>
-              <img src={mainPic} alt="" />
-            </figure>
-          </div>
+          <figure className={indexHero}>
+            <img src={mainPic} alt="" />
+          </figure>
         </Col>
         <Col xs={12} lg={6}>
-          <div className={indexIntro}>
-            <p>
-              <b>Not a pure developer, but neither a designer.</b>
-            </p>
+          <div className={indexText}>
+            <h2>Not a pure developer, but neither a designer</h2>
             <p>
               <b>You exist in a gray zone.</b> You know how to develop, you have
               an eye for UX and design, technology is just a tool for you to

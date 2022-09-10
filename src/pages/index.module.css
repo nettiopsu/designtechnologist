@@ -41,6 +41,7 @@
   padding: calc(8px + 2.5vw);
   background: white;
   border-radius: 16px;
+  margin-bottom: 16px;
 }
 
 .indexTitle {
