@@ -38,6 +38,7 @@ interface PageTemplateProps {
       frontmatter: any;
       fields: any;
       body: any;
+      timeToRead: any;
     };
     site: {
       siteMetadata: SiteProps;
@@ -154,9 +155,7 @@ export default function PageTemplate(props: PageTemplateProps) {
         <div className={bubble}>
           <Row className={layoutChapterReadMore}>
             <Col xs={12}>
-              <div>
-                Reading time: {Math.round(mdx.fields.readingTime.minutes)} min.
-              </div>
+              <div>Reading time: {Math.round(mdx.timeToRead)} min.</div>
               <div>
                 Author: <a href="/about">Konstantin</a>
               </div>
@@ -278,11 +277,7 @@ export const pageQuery = graphql`
           accessDate
         }
       }
-      fields {
-        readingTime {
-          minutes
-        }
-      }
+      timeToRead
     }
     allYaml(filter: { slug: { eq: $currentSlug } }) {
       edges {

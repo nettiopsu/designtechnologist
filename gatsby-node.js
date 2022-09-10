@@ -1,4 +1,5 @@
 const { createFilePath } = require("gatsby-source-filesystem");
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === "Mdx") {
@@ -34,6 +35,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               order
               appendix
             }
+            timeToRead
           }
         }
       }
