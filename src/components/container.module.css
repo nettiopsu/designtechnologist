@@ -3,6 +3,12 @@
   padding: 0 16px;
 }
 
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 0 4px;
+  }
+}
+
 .containerNarrow {
   max-width: 700px;
 }
