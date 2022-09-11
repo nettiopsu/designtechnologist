@@ -4,13 +4,8 @@ import { Col, Row } from "react-flexbox-grid";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import mainPic from "../images/designtechnologist.svg";
-import {
-  indexHero,
-  indexIntro,
-  indexMain,
-  indexText,
-  indexTitle
-} from "./index.module.css";
+import { indexHero, indexTitle } from "./index.module.css";
+import { bubble } from "../components/layout.module.css";
 
 interface Edge {
   node: {
@@ -54,14 +49,14 @@ const IndexPage = ({
     <Layout wide={true}>
       <SEO />
       <h1 className={indexTitle}>Design Technologist Club</h1>
-      <Row middle={"xs"} className={indexMain}>
+      <Row middle={"xs"}>
         <Col xs={12} lg={6}>
           <figure className={indexHero}>
             <img src={mainPic} alt="" />
           </figure>
         </Col>
         <Col xs={12} lg={6}>
-          <div className={indexText}>
+          <div className={bubble}>
             <h2>Not a pure developer, but neither a designer</h2>
             <p>
               <b>You exist in a gray zone.</b> You know how to develop, you have
@@ -80,7 +75,7 @@ const IndexPage = ({
       </Row>
       <Row>
         <Col xs={12} lg={6}>
-          <div className={indexText}>
+          <div className={bubble}>
             <h2>Slack community</h2>
             <p>
               The Design Technologist Slack community is a free space for
@@ -106,7 +101,7 @@ const IndexPage = ({
           </div>
         </Col>
         <Col xs={12} lg={6}>
-          <div className={indexText}>
+          <div className={bubble}>
             <h2>Handbook</h2>
             <ol>
               {edges.map(edge => {

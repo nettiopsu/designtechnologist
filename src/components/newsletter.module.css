@@ -1,5 +1,5 @@
 .newsletterContainer {
-  margin: calc(2rem + 3vw) auto 32px auto;
+  margin: 0 auto 32px auto;
   padding: calc(8px + 2.5vw);
   border: 1px #2f2f30 solid;
   font-size: 16px;
@@ -39,10 +39,4 @@
 .newsletterFieldsContainer input,
 .newsletterFieldsContainer button {
   margin-bottom: 8px;
-}
-
-@media only screen and (min-width: 1280px) {
-  .newsletterContainer {
-    margin-top: 80px;
-  }
 }

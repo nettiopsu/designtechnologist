@@ -1,13 +1,10 @@
-.indexMain > div {
-  margin-bottom: calc(32px + 3vw);
-}
-
 .indexHero {
   width: 100%;
   overflow: hidden;
   margin: 0;
   padding-top: 59.565385%;
   position: relative;
+  margin-bottom: 80px;
 }
 
 .indexHero img {
@@ -57,9 +54,6 @@
 @media only screen and (min-width: 1280px) {
   .indexTitle {
     font-size: 5rem;
-    margin-bottom: 80px;
-  }
-  .indexMain > div {
     margin-bottom: 80px;
   }
 }
